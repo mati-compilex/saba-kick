@@ -18,7 +18,7 @@ function SectionTabs({ tabs, activeTab, onChange }) {
           onClick={() => onChange?.(tab.id)}
           className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
             activeTab === tab.id
-              ? 'bg-[#ffffff] text-[#4b4b4b ]'
+              ? 'bg-white text-[#4b4b4b ]'
               : 'bg-transparent text-gray-700'
           }`}
         >
