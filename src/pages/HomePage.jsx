@@ -59,7 +59,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       {isHot ? (
         <>
           <MediaPlaceholder
-            className={`h-[544px] mt-6 bg-[#f2f2f2] transition-all duration-500`}
+            className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
             text="正在LIVE的內容"
             textClassName="text-[23px]"
           />
@@ -72,7 +72,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           )}
           {showMoreCompetitions && (
            <MediaPlaceholder
-            className={`h-[544px] mt-6 bg-[#f2f2f2] transition-all duration-500`}
+            className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
             text="Upcoming & Ended"
             textClassName="text-[23px]"
           />
@@ -81,6 +81,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       ) : (
         <UpcomingSection
           matches={filteredMatches}
+          activeTab={activeTab}
           // mode={isHot ? 'placeholder' : 'list'}
         />
       )}

@@ -12,6 +12,7 @@ export default {
       },
       colors: {
         dark: '#333333',
+        lightGray: '#f2f2f2',
       },
     },
   },

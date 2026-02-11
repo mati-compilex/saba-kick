@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 import headerIcon from '../assets/headerIcon.svg'
 function Header() {
   return (
-    <div className="flex items-center justify-between bg-[#f2f2f2] rounded-[16px] px-[15px] py-[10px]">
+    <div className="flex items-center justify-between bg-lightGray rounded-[16px] px-[15px] py-[10px]">
       <div className="flex items-center gap-2">
         <img src={logo} alt="Logo" className="h-[62px] w-[118px]" />
       </div>
