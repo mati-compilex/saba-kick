@@ -3,13 +3,13 @@ import MediaPlaceholder from "./MediaPlaceholder.jsx";
 function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
   return (
     <div
-      className={`${!isLastItem ? "border-b border-[#797979] pb-3" : ""} ${
+      className={`${!isLastItem ? "border-b border-dimGray pb-3" : ""} ${
         comp.status === "result" ? "cursor-pointer hover:bg-gray-50" : ""
       }`}
       onClick={onToggle}
     >
       {isExpanded ? (
-        <div className="border border-[#797979] bg-white p-4 relative pt-8">
+        <div className="border border-dimGray bg-white p-4 relative pt-8">
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -26,13 +26,13 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
             </div>
 
             <div className="absolute top-0 left-1/2 -translate-x-1/2">
-              <div className="bg-[#aaaaaa] text-dark px-6 py-1 rounded-b-xl font-bold text-sm shadow-sm">
+              <div className="bg-grayMedium text-dark px-6 py-1 rounded-b-xl font-bold text-sm shadow-sm">
                 Ended
               </div>
             </div>
 
             <div className="flex justify-center mb-6 mt-2">
-              <div className="bg-[#d7d7d7] px-3 py-1.5 rounded-full text-[9px] font-medium text-dark">
+              <div className="bg-grayLight px-3 py-1.5 rounded-full text-[9px] font-medium text-dark">
                 {comp.league}
               </div>
             </div>
@@ -99,7 +99,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
 
             {comp.status === "coming" ? (
               <div className="text-right">
-                <div className="text-[10px] text-[#63a103] font-medium mb-1">
+                <div className="text-[10px] text-success font-medium mb-1">
                   Coming Shortly
                 </div>
                 <div className="bg-lightGray text-dark text-[10px] px-3 py-1 rounded-full">

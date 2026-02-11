@@ -233,7 +233,7 @@ function UpcomingSection({
                           />
 
                           <div className="absolute left-1/2 -top-4 -translate-x-1/2">
-                            <div className="bg-[#aaaaaa] text-[#cc0017] px-6 py-0.5 rounded-b-xl font-bold text-sm shadow-sm">
+                            <div className="bg-grayMedium text-[#cc0017] px-6 py-0.5 rounded-b-xl font-bold text-sm shadow-sm">
                               LIVE
                             </div>
                           </div>
@@ -331,7 +331,7 @@ function UpcomingSection({
         <div className="flex justify-center">
           <Button
             variant="ghost"
-            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-[#797979] bg-white text-dark font-montserrat"
+            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat"
             onClick={() => setShowMoreCompetitions(true)}
           >
             SEE MORE COMING &gt;&gt;
