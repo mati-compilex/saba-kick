@@ -6,7 +6,14 @@ export default {
     // Add other paths here if needed
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ['"Montserrat"', 'sans-serif'],
+      },
+      colors: {
+        dark: '#333333',
+      },
+    },
   },
   plugins: [],
 }

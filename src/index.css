@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,5 +10,5 @@
 body {
   background: #f6f7f9;
   color: #111827;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
