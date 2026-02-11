@@ -8,14 +8,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['"Montserrat"', 'sans-serif'],
+        montserrat: ['"Montserrat"', "sans-serif"],
       },
       colors: {
-        dark: '#333333',
-        lightGray: '#f2f2f2',
+        dark: "#333333",
+        lightGray: "#f2f2f2",
+        grayLight: "#d7d7d7",
+        grayMedium: "#aaaaaa",
+        dimGray: "#797979",
+        success: "#63A103",
       },
     },
   },
   plugins: [],
-}
-
+};

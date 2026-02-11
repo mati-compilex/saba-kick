@@ -76,14 +76,14 @@ function FilterChips({ filters, activeFilter, onChange }) {
             onClick={() => setSelectedDate(date)}
             className={`flex flex-col items-center justify-center rounded-full h-10 w-10 text-[13px] font-semibold transition ${
               isSelected(date)
-                ? 'bg-[rgba(202,249,130,0.24)] text-[#63a103]'
+                ? 'bg-[rgba(202,249,130,0.24)] text-success'
                 : 'bg-transparent text-gray-700'
             }`}
           >
             <div>{date.getDate()}</div>
             <div className={`text-[8px] font-normal text-gray-500
               ${isSelected(date)
-                ? 'text-[#63a103]'
+                ? 'text-success'
                 : 'bg-transparent text-gray-500'
             }`}>
               {weekdays[date.getDay()]}

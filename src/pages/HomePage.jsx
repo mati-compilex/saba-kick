@@ -41,7 +41,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
         <SponsorRow sponsors={sponsors} />
         <div>
-          <h1 className="text-[19px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-[#333333] text-left leading-normal px-[12px]">
+          <h1 className="text-[19px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-dark text-left leading-normal px-[12px]">
             Live Stream, Results and Upcoming Matches
           </h1>
         </div>
@@ -68,7 +68,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           />
           {!showMoreCompetitions && (
             <div className="flex justify-center">
-              <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-[#797979] bg-white text-dark font-montserrat" onClick={() => setShowMoreCompetitions(true)}>
+              <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat" onClick={() => setShowMoreCompetitions(true)}>
                 SEE MORE COMING &gt;&gt;
               </Button>
             </div>
