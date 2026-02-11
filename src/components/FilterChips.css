@@ -1,0 +1,101 @@
+.custom-datepicker {
+  font-family: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.custom-datepicker .react-datepicker__header {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+.custom-datepicker .react-datepicker__current-month {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.custom-datepicker .react-datepicker__day-names {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.custom-datepicker .react-datepicker__day-name {
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 2rem;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.custom-datepicker .react-datepicker__month {
+  margin: 0.5rem;
+}
+
+.custom-datepicker .react-datepicker__week {
+  display: flex;
+  justify-content: space-around;
+}
+
+.custom-datepicker .react-datepicker__day {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0.125rem;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.custom-datepicker .react-datepicker__day:hover {
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+}
+
+.custom-datepicker .react-datepicker__day--selected {
+  background-color: rgba(202, 249, 130, 0.24) !important;
+  color: #22c55e !important;
+  font-weight: 600;
+}
+
+.custom-datepicker .react-datepicker__day--keyboard-selected {
+  background-color: rgba(202, 249, 130, 0.24);
+  color: #22c55e;
+}
+
+.custom-datepicker .react-datepicker__day--today {
+  font-weight: 600;
+  color: #111827;
+}
+
+.custom-datepicker .react-datepicker__day--outside-month {
+  color: #d1d5db;
+}
+
+.custom-datepicker .react-datepicker__navigation {
+  top: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.custom-datepicker .react-datepicker__navigation--previous {
+  left: 1rem;
+}
+
+.custom-datepicker .react-datepicker__navigation--next {
+  right: 1rem;
+}
+
+.custom-datepicker .react-datepicker__navigation-icon::before {
+  border-color: #6b7280;
+  border-width: 2px 2px 0 0;
+  height: 7px;
+  width: 7px;
+}
