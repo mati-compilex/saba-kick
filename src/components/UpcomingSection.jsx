@@ -199,7 +199,7 @@ function UpcomingSection({
         <div
           className={`transition-all duration-300 ease-in-out mt-2 overflow-hidden ${isUpcomingOpen ? "max-h-[10000px] opacity-100" : "max-h-0 opacity-0"}`}
         >
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {showPlaceholder ? (
               <>
                 {liveMatchesData.map((match) => {
@@ -304,7 +304,7 @@ function UpcomingSection({
 
       {showMoreCompetitions && (
         <div className="rounded-2xl bg-lightGray p-4">
-          <div className="rounded-2xl bg-white p-4 space-y-4">
+          <div className="rounded-2xl bg-white p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {moreCompetitionsData.map((comp, index) => (
               <MatchAccordionItem
                 key={comp.id}

@@ -69,7 +69,7 @@ function FilterChips({ filters, activeFilter, onChange }) {
       >
         <img src={rightIcon} alt="Previous" className="h-8 w-8" />
       </button>
-      <div className="flex gap-2">
+      <div className="flex">
         {dates.map((date, index) => (
           <button
             key={index}
