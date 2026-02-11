@@ -40,7 +40,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     <>
       <SponsorRow sponsors={sponsors} />
       <div>
-        <h1 className="text-[19px] font-semibold text-gray-900 w-[350px] h-[51px] font-monserrat bg-transparent box-border font-semibold text-[#333333] text-left leading-normal">
+        <h1 className="text-[17px] font-semibold text-gray-900 w-[350px] h-[51px] font-monserrat bg-transparent box-border font-semibold text-[#333333] text-left leading-normal px-[19px]">
           Live Stream, Results and Upcoming Matches
         </h1>
       </div>
