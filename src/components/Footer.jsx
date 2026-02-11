@@ -1,31 +1,68 @@
-function Footer() {
+import facebookIcon from '../assets/facebook.svg'
+import instagramIcon from '../assets/insta.svg'
+import youtubeIcon from '../assets/youtube.svg'
+import arrowRight from '../assets/arrowRight.png'
+import arrowDown from '../assets/arrowDown.png'
+const Footer = () => {
+
   return (
-    <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-4 text-[11px] text-gray-500">
+<div className="space-y-4 bg-white p-4 text-[13px] text-[#333333]">
       <p>
         Live scores, match highlights, and full replays curated across the top
         leagues and tournaments.
       </p>
-      <div className="grid grid-cols-2 gap-2 text-[11px]">
-        <span>Contact</span>
-        <span>About</span>
-        <span>Help</span>
-        <span>Live</span>
-        <span>Sports</span>
-        <span>News</span>
+      <div className="flex justify-between text-[13px]">
+        <div>
+          <details className="mb-4" open>
+            <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
+              Contact
+            </summary>
+            <ul className="mt-2 ml-4 space-y-1 text-gray-600">
+              <li><a href="#" className="hover:underline">Mobile</a></li>
+              <li><a href="#" className="hover:underline">Email</a></li>
+              <li><a href="#" className="hover:underline">Address</a></li>
+            </ul>
+          </details>
+
+          <details className="mb-4" open>
+            <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
+              Quick Link
+            </summary>
+            <ul className="mt-2 ml-4 space-y-1 text-gray-600">
+              <li><a href="#" className="hover:underline">FAQ</a></li>
+              <li><a href="#" className="hover:underline">Blog</a></li>
+              <li><a href="#" className="hover:underline">Support</a></li>
+            </ul>
+          </details>
+
+          <details open>
+            <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
+              Legal
+            </summary>
+            <ul className="mt-2 ml-4 space-y-1 text-gray-600">
+              <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+              <li><a href="#" className="hover:underline">Terms</a></li>
+            </ul>
+          </details>
+        </div>
+        <div className="flex items-end gap-2">
+          <span className="inline-flex items-center justify-center">
+            <img src={facebookIcon} alt="Facebook" className="h-6 w-6" />
+          </span>
+          <span className="inline-flex items-center justify-center">
+            <img src={instagramIcon} alt="Instagram" className="h-6 w-6" />
+          </span>
+          <span className="inline-flex items-center justify-center">
+            <img src={youtubeIcon} alt="YouTube" className="h-6 w-6" />
+          </span>
+        </div>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-[10px] font-semibold">
-          FB
-        </span>
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-[10px] font-semibold">
-          IG
-        </span>
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-[10px] font-semibold">
-          YT
-        </span>
-      </div>
-      <div className="text-[10px] text-gray-400">
-        (c) 2026 KICK. All rights reserved.
+
+      <div className="text-[13px] text-[#333333]">
+        © 2026 SABA. All Rights Reserved.
       </div>
     </div>
   )
