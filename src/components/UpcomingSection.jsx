@@ -12,7 +12,7 @@ function UpcomingSection({
   mode = "placeholder",
   activeTab = "football",
 }) {
-  const [expandedLiveId, setExpandedLiveId] = useState(null);
+  const [expandedLiveIds, setExpandedLiveIds] = useState([]);
   const [showMoreCompetitions, setShowMoreCompetitions] = useState(false);
 
   const tabInfo = {
@@ -49,7 +49,7 @@ function UpcomingSection({
       time: "12:00 ~ 19:00",
     },
   ];
-  const [expandedMatchId, setExpandedMatchId] = useState(null);
+  const [expandedMatchIds, setExpandedMatchIds] = useState([]);
   const [isUpcomingOpen, setIsUpcomingOpen] = useState(true);
   const hasMatches = matches.length > 0;
   const showPlaceholder = mode === "placeholder";
@@ -57,8 +57,20 @@ function UpcomingSection({
 
   const handleMatchClick = (match) => {
     if (match.status === "result") {
-      setExpandedMatchId(expandedMatchId === match.id ? null : match.id);
+      setExpandedMatchIds((prev) =>
+        prev.includes(match.id)
+          ? prev.filter((id) => id !== match.id)
+          : [...prev, match.id],
+      );
     }
+  };
+
+  const handleLiveMatchClick = (matchId) => {
+    setExpandedLiveIds((prev) =>
+      prev.includes(matchId)
+        ? prev.filter((id) => id !== matchId)
+        : [...prev, matchId],
+    );
   };
 
   const moreCompetitionsData = [
@@ -199,20 +211,18 @@ function UpcomingSection({
         <div
           className={`transition-all duration-300 ease-in-out mt-2 overflow-hidden ${isUpcomingOpen ? "max-h-[10000px] opacity-100" : "max-h-0 opacity-0"}`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {showPlaceholder ? (
               <>
                 {liveMatchesData.map((match) => {
-                  const isExpanded = expandedLiveId === match.id;
+                  const isExpanded = expandedLiveIds.includes(match.id);
                   return (
                     <div
                       key={match.id}
                       className="rounded-2xl border border-gray-200 bg-white p-4"
                     >
                       <div
-                        onClick={() =>
-                          setExpandedLiveId(isExpanded ? null : match.id)
-                        }
+                        onClick={() => handleLiveMatchClick(match.id)}
                         className="cursor-pointer"
                       >
                         <div className="relative flex items-center justify-between mb-3">
@@ -304,14 +314,14 @@ function UpcomingSection({
 
       {showMoreCompetitions && (
         <div className="rounded-2xl bg-lightGray p-4">
-          <div className="rounded-2xl bg-white p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="rounded-2xl bg-white p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {moreCompetitionsData.map((comp, index) => (
               <MatchAccordionItem
                 key={comp.id}
                 comp={comp}
-                isExpanded={expandedMatchId === comp.id}
+                isExpanded={expandedMatchIds.includes(comp.id)}
                 onToggle={() => handleMatchClick(comp)}
-                isLastItem={index === moreCompetitionsData.length - 1}
+                // isLastItem={index === moreCompetitionsData.length - 1}
               />
             ))}
           </div>
