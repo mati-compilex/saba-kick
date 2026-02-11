@@ -53,7 +53,7 @@ function FilterChips({ filters, activeFilter, onChange }) {
     <div className="flex items-center gap-2">
       <button 
         onClick={handleCalendarClick}
-        className="flex h-10 w-10 items-center p-1 justify-center rounded-full bg-[#f2f2f2] text-gray-700 "
+        className="flex h-10 w-10 items-center p-1 justify-center rounded-full bg-lightGray text-gray-700 "
       >
         <img src={calendar} alt="Calendar" className="h-4 w-4" />
       </button>
