@@ -1,5 +1,8 @@
-export const sponsors = ['1XBET', 'dafabet', 'betway', 'bet365']
 
+import sponsor1 from '../assets/sponsor1.png'
+import sponsor2 from '../assets/sponsor2.png'
+import sponsor3 from '../assets/sponsor3.png'
+export const sponsors = [sponsor1, sponsor2, sponsor3]
 export const tabOptions = [
   { id: 'hot', label: 'Hot Matches' },
   { id: 'football', label: 'Football' },
