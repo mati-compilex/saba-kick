@@ -6,7 +6,7 @@ import arrowDown from '../assets/arrowDown.png'
 const Footer = () => {
 
   return (
-    <div className="space-y-4 bg-white p-4 text-[13px] text-[#333333]">
+    <div className="space-y-4 bg-white p-4 text-[13px] text-dark">
       <div className='lg:flex lg:justify-between '>
         <p className='lg:max-w-[300px] mb-10 lg:mb-0'>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex justify-between text-[13px] lg:w-full">
           <div className='lg:flex lg:justify-around lg:w-full'>
             <details className="mb-4" open>
-              <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <summary className="flex items-center gap-2 text-dark font-medium cursor-pointer list-none">
                 <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
                 Contact
               </summary>
@@ -26,7 +26,7 @@ const Footer = () => {
             </details>
 
             <details className="mb-4" open>
-              <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <summary className="flex items-center gap-2 text-dark font-medium cursor-pointer list-none">
                 <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
                 Quick Link
               </summary>
@@ -38,7 +38,7 @@ const Footer = () => {
             </details>
 
             <details open>
-              <summary className="flex items-center gap-2 text-[#333333] font-medium cursor-pointer list-none">
+              <summary className="flex items-center gap-2 text-dark font-medium cursor-pointer list-none">
                 <img src={arrowDown} alt="Arrow Down" className="h-2 w-2" />
                 Legal
               </summary>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-[13px] text-[#333333]">
+      <div className="text-[13px] text-dark">
         © 2026 SABA. All Rights Reserved.
       </div>
     </div>

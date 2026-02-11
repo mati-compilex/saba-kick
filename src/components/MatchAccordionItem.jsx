@@ -68,7 +68,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
             <MediaPlaceholder
               className="h-96 w-full"
               text="WATCH AGAIN"
-              textClassName="text-xl font-bold text-[#333333]"
+              textClassName="text-xl font-bold text-dark"
             />
           </div>
         </div>
