@@ -16,13 +16,13 @@ function SectionTabs({ tabs, activeTab, onChange }) {
           key={tab.id}
           type="button"
           onClick={() => onChange?.(tab.id)}
-          className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold transition ${
+          className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
             activeTab === tab.id
               ? 'bg-[#ffffff] text-[#4b4b4b ]'
               : 'bg-transparent text-gray-700'
           }`}
         >
-          <span className="text-sm"><img src={icons[tab.id]} alt={tab.label} className="w-5 h-5" /></span>{tab.label}
+          <span className="text-xs"><img src={icons[tab.id]} alt={tab.label} className="w-5 h-5" /></span>{tab.label}
         </button>
       ))}
     </div>
