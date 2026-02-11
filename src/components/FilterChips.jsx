@@ -1,5 +1,4 @@
-import { useState, useRef } from 'react'
-import Chip from './ui/Chip.jsx'
+import { useRef, useState } from 'react'
 
 function FilterChips({ filters, activeFilter, onChange }) {
   const [selectedDate, setSelectedDate] = useState(new Date())
