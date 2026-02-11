@@ -41,7 +41,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
         <SponsorRow sponsors={sponsors} />
         <div>
-          <h1 className="text-[19px] w-[350px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-dark text-left leading-normal">
+          <h1 className="text-[19px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-dark text-left leading-normal px-[12px]">
             Live Stream, Results and Upcoming Matches
           </h1>
         </div>

@@ -74,7 +74,7 @@ function FilterChips({ filters, activeFilter, onChange }) {
           <button
             key={index}
             onClick={() => setSelectedDate(date)}
-            className={`flex flex-col items-center justify-center rounded-full px-3 py-1 text-[13px] font-semibold transition ${
+            className={`flex flex-col items-center justify-center rounded-full h-10 w-10 text-[13px] font-semibold transition ${
               isSelected(date)
                 ? 'bg-[rgba(202,249,130,0.24)] text-success'
                 : 'bg-transparent text-gray-700'
