@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react'
-
+import calendar from '../assets/calendar.svg'
+import leftIcon from '../assets/leftIcon.png'
+import rightIcon from '../assets/rightIcon.png'
 function FilterChips({ filters, activeFilter, onChange }) {
   const [selectedDate, setSelectedDate] = useState(new Date())
   const calendarRef = useRef(null)
@@ -51,9 +53,9 @@ function FilterChips({ filters, activeFilter, onChange }) {
     <div className="flex items-center gap-2">
       <button 
         onClick={handleCalendarClick}
-        className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-gray-700 ring-1 ring-gray-200 hover:ring-gray-300"
+        className="flex h-10 w-10 items-center p-1 justify-center rounded-full bg-[#f2f2f2] text-gray-700 "
       >
-        📅
+        <img src={calendar} alt="Calendar" className="h-4 w-4" />
       </button>
       <input 
         ref={calendarRef}
@@ -63,23 +65,27 @@ function FilterChips({ filters, activeFilter, onChange }) {
       />
       <button 
         onClick={handlePrev}
-        className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-gray-500 ring-1 ring-gray-200 hover:ring-gray-300"
+        className="flex h-9 w-9 items-center justify-center bg-transparent text-gray-500"
       >
-        ‹
+        <img src={rightIcon} alt="Previous" className="h-8 w-8" />
       </button>
       <div className="flex gap-2">
         {dates.map((date, index) => (
           <button
             key={index}
             onClick={() => setSelectedDate(date)}
-            className={`flex flex-col items-center justify-center rounded-lg px-3 py-1 text-xs font-semibold transition ${
+            className={`flex flex-col items-center justify-center rounded-full px-3 py-1 text-xs font-semibold transition ${
               isSelected(date)
-                ? 'bg-yellow-300 text-gray-900'
-                : 'bg-white text-gray-700 ring-1 ring-gray-200 hover:ring-gray-300'
+                ? 'bg-[rgba(202,249,130,0.24)] text-[#63a103]'
+                : 'bg-transparent text-gray-700'
             }`}
           >
             <div>{date.getDate()}</div>
-            <div className="text-[10px] font-normal text-gray-500">
+            <div className={`text-[10px] font-normal text-gray-500
+              ${isSelected(date)
+                ? 'text-[#63a103]'
+                : 'bg-transparent text-gray-500'
+            }`}>
               {weekdays[date.getDay()]}
             </div>
           </button>
@@ -87,9 +93,9 @@ function FilterChips({ filters, activeFilter, onChange }) {
       </div>
       <button 
         onClick={handleNext}
-        className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-gray-500 ring-1 ring-gray-200 hover:ring-gray-300"
+        className="flex h-9 w-9 items-center justify-center bg-transparent text-gray-500"
       >
-        ›
+        <img src={leftIcon} alt="Next" className="h-8 w-8" />
       </button>
     </div>
   )

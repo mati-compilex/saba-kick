@@ -8,7 +8,6 @@ export const sponsors = [
   { name: 'betway', logo: logoBetway }
 ]
 
-
 export const tabOptions = [
   { id: 'hot', label: 'Hot Matches' },
   { id: 'football', label: 'Football' },
