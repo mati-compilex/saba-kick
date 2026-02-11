@@ -69,12 +69,12 @@ function FilterChips({ filters, activeFilter, onChange }) {
       >
         <img src={rightIcon} alt="Previous" className="h-8 w-8" />
       </button>
-      <div className="flex gap-1">
+      <div className="flex gap-2">
         {dates.map((date, index) => (
           <button
             key={index}
             onClick={() => setSelectedDate(date)}
-            className={`flex flex-col items-center justify-center rounded-full px-2.5 py-1 text-[13px] font-semibold transition ${
+            className={`flex flex-col items-center justify-center rounded-full px-3 py-1 text-[13px] font-semibold transition ${
               isSelected(date)
                 ? 'bg-[rgba(202,249,130,0.24)] text-[#63a103]'
                 : 'bg-transparent text-gray-700'
