@@ -10,7 +10,7 @@ function SectionTabs({ tabs, activeTab, onChange }) {
   }
 
   return (
-    <div className="flex flex-wrap justify-between bg-lightGray rounded-[16px] p-1">
+    <div className="flex flex-wrap justify-between lg:justify-center lg:gap-2 bg-lightGray rounded-[16px] p-1">
       {tabs.map((tab) => (
         <button
           key={tab.id}

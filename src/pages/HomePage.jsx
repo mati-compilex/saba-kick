@@ -37,24 +37,27 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     }) ?? liveMatches[0];
 
   return (
-    <>
-      <SponsorRow sponsors={sponsors} />
-      <div>
-        <h1 className="text-[19px] font-semibold text-gray-900 w-[350px] h-[51px] font-monserrat bg-transparent box-border font-semibold text-[#333333] text-left leading-normal">
-          Live Stream, Results and Upcoming Matches
-        </h1>
+    <div className="grid gap-3 lg:grid-cols-1">
+      <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
+        <SponsorRow sponsors={sponsors} />
+        <div>
+          <h1 className="text-[19px] w-[350px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-[#333333] text-left leading-normal">
+            Live Stream, Results and Upcoming Matches
+          </h1>
+        </div>
       </div>
-      <SectionTabs
-        tabs={tabOptions}
-        activeTab={activeTab}
-        onChange={onTabChange}
-      />
-      <FilterChips
-        filters={dateFilters}
-        activeFilter={activeDate}
-        onChange={onDateChange}
-      />
-
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-2">
+        <SectionTabs
+          tabs={tabOptions}
+          activeTab={activeTab}
+          onChange={onTabChange}
+        />
+        <FilterChips
+          filters={dateFilters}
+          activeFilter={activeDate}
+          onChange={onDateChange}
+        />
+      </div>
       <LiveHero match={activeLiveMatch} />
       {isHot ? (
         <>
@@ -66,26 +69,26 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           {!showMoreCompetitions && (
             <div className="flex justify-center">
               <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-[#797979] bg-white text-dark font-montserrat" onClick={() => setShowMoreCompetitions(true)}>
-               SEE MORE COMING &gt;&gt;
+                SEE MORE COMING &gt;&gt;
               </Button>
             </div>
           )}
           {showMoreCompetitions && (
-           <MediaPlaceholder
-            className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
-            text="Upcoming & Ended"
-            textClassName="text-[23px]"
-          />
+            <MediaPlaceholder
+              className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
+              text="Upcoming & Ended"
+              textClassName="text-[23px]"
+            />
           )}
         </>
       ) : (
         <UpcomingSection
           matches={filteredMatches}
           activeTab={activeTab}
-          // mode={isHot ? 'placeholder' : 'list'}
+        // mode={isHot ? 'placeholder' : 'list'}
         />
       )}
-    </>
+    </div>
   );
 }
 

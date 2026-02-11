@@ -1,6 +1,6 @@
 function SponsorRow({ sponsors }) {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between lg:justify-start lg:gap-2 items-center">
       {sponsors.map((sponsor) => (
         <div
           key={sponsor.name}

@@ -5,15 +5,15 @@ function Layout({ children, aside }) {
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto w-full max-w-[1200px] px-2 py-2">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
+        <div className="grid gap-6 lg:grid-cols-1">
           <main className="space-y-[10px]">
             <Header />
             {children}
             <Footer />
           </main>
-          <aside className="hidden lg:block">
+          {/* <aside className="hidden lg:block">
             <div className="space-y-6">{aside}</div>
-          </aside>
+          </aside> */}
         </div>
       </div>
     </div>

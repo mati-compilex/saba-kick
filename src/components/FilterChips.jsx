@@ -50,7 +50,7 @@ function FilterChips({ filters, activeFilter, onChange }) {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center lg:justify-center gap-2 relative">
       <button 
         onClick={handleCalendarClick}
         className="flex h-10 w-10 items-center p-1 justify-center rounded-full bg-lightGray text-gray-700 "
