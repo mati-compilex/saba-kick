@@ -11,7 +11,7 @@ export const sponsors = [
 export const tabOptions = [
   { id: 'hot', label: 'Hot Matches' },
   { id: 'football', label: 'Football' },
-  { id: 'basketball', label: 'Basketball' },
+  { id: 'basketball', label: 'Cockfighting' },
 ]
 
 const baseDate = new Date()
