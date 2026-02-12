@@ -58,7 +58,7 @@ function LiveHero({ match, showScreen = false }) {
         </div>
       </div>
       <MediaPlaceholder
-        className={`h-48 mt-6 bg-white transition-all duration-500 ${isScreenVisible ? "opacity-100" : "!h-0 opacity-0"}`}
+        className={`h-48 bg-white transition-all duration-500 ${isScreenVisible ? "opacity-100 mt-6" : "!h-0 opacity-0"}`}
         text="LIVE SCREEN"
         textClassName="text-[20px] font-semibold"
       />
