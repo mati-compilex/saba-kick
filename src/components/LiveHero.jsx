@@ -9,7 +9,7 @@ function LiveHero({ match, showScreen = false }) {
   const oddsAway = match.oddsAway ?? "4.3";
 
   return (
-    <Card className="p-4 relative !bg-lightGray">
+    <Card className="p-4 relative !bg-lightGray mt-2">
       {/* <div className="flex items-center justify-between text-[10px] text-gray-500">
         <span className="font-semibold uppercase tracking-wide">Advanced</span>
         <Badge tone="live">{match.status ?? 'Live'}</Badge>
