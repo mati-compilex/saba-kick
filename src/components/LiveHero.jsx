@@ -9,11 +9,16 @@ function LiveHero({ match, showScreen = false }) {
   const oddsAway = match.oddsAway ?? "4.3";
 
   return (
-    <Card className="p-4 !bg-lightGray">
+    <Card className="p-4 relative !bg-lightGray">
       {/* <div className="flex items-center justify-between text-[10px] text-gray-500">
         <span className="font-semibold uppercase tracking-wide">Advanced</span>
         <Badge tone="live">{match.status ?? 'Live'}</Badge>
       </div> */}
+       <div className="absolute -top-3 left-4">
+        <span className="rounded-md bg-dark px-2 py-1 text-xs font-semibold text-white shadow-md">
+          Hottest Match of the day
+        </span>
+      </div>
       <div
         onClick={() => setIsScreenVisible(!isScreenVisible)}
         className="cursor-pointer"
