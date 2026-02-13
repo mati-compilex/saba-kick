@@ -17,7 +17,7 @@ function UpcomingSection({
 
   const tabInfo = {
     football: { label: "Football", icon: footballIcon },
-    basketball: { label: "Cockfighting", icon: cockfightingIcon },
+    cockfighting: { label: "Cockfighting", icon: cockfightingIcon },
     hot: { label: "Hot Matches", icon: fireIcon },
   };
 

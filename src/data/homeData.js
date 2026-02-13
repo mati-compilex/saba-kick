@@ -11,7 +11,7 @@ export const sponsors = [
 export const tabOptions = [
   { id: 'hot', label: 'Hot Matches' },
   { id: 'football', label: 'Football' },
-  { id: 'basketball', label: 'Cockfighting' },
+  { id: 'cockfighting', label: 'Cockfighting' },
 ]
 
 const baseDate = new Date()
@@ -51,7 +51,7 @@ export const liveMatches = [
     scoreHome: 74,
     scoreAway: 71,
     status: 'Live',
-    sport: 'basketball',
+    sport: 'cockfighting',
     dateId: 'd0',
   },
 ]
@@ -142,7 +142,7 @@ export const upcomingMatches = [
     scoreHome: 0,
     scoreAway: 0,
     status: 'Upcoming',
-    sport: 'basketball',
+    sport: 'cockfighting',
     dateId: 'd3',
   },
   {
