@@ -1,18 +1,13 @@
 
 import React from "react";
-
-const LiveStream = ({ text = "LIVE SCREEN", className = "", textClassName = "" }) => {
+import playIcon from "../../assets/playIcon.svg";
+const LiveStream = ({ text = "Livestream", className = "", textClassName = "" }) => {
   return (
-    <div className={`relative flex items-center justify-center border border-dimGray bg-lightGray ${className}`}>
-      <svg className="absolute inset-0 w-full h-full pointer-events-none">
-        <line x1="0" y1="100%" x2="100%" y2="0" stroke="#797979" strokeWidth="1" />
-        <line x1="0" y1="0" x2="100%" y2="100%" stroke="#797979" strokeWidth="1" />
-      </svg>
-      {text && (
-        <span className={`relative z-10 bg-inherit text-dark text-center leading-normal font-montserrat ${textClassName}`}>
-          {text}
-        </span>
-      )}
+    <div className="relative">
+    <div className={` flex items-center justify-center rounded-[16px]  bg-lightGray ${className}`}>
+      <img src={playIcon} alt="Play Icon" className="absolute w-12 h-12 opacity-75" />
+      <span className={`absolute top-[-8px] left-2 text-[11px] font-bold text-white rounded-[6px] px-2 bg-[#333333] ${textClassName}`}>{text}</span>
+    </div>
     </div>
   );
 };

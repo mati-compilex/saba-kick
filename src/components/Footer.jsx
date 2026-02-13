@@ -47,10 +47,11 @@ const Footer = () => {
   return (
     <div className="space-y-4 bg-white p-4 text-[13px] text-dark">
       <div className='lg:flex lg:justify-between '>
-        <p className='lg:max-w-[300px] mb-10 lg:mb-0'>
+        <div className="border-b border-dimGray lg:hidden mb-4"></div>
+        <p className='lg:max-w-[300px] mb-10 lg:mb-0 px-1'>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
         </p>
-        <div className="flex justify-between text-[13px] lg:w-full">
+        <div className="flex justify-between text-[13px] lg:w-full px-2">
           <div className='lg:flex lg:justify-around lg:w-full'>
             {sections.map((section) => (
               <div key={section.title} className="mb-4">
