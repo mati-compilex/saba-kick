@@ -6,7 +6,7 @@ function SectionTabs({ tabs, activeTab, onChange }) {
   const icons = {
     hot: fireIcon,
     football: footballIcon,
-    basketball: cockfightingIcon,
+    cockfighting: cockfightingIcon,
   }
 
   return (

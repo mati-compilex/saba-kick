@@ -2,10 +2,13 @@ import { useMemo, useState } from "react";
 import FilterChips from "../components/FilterChips.jsx";
 import LeagueList from "../components/LeagueList.jsx";
 import LiveHero from "../components/LiveHero.jsx";
+import MediaPlaceholder from "../components/MediaPlaceholder.jsx";
 import SectionTabs from "../components/SectionTabs.jsx";
 import SponsorRow from "../components/SponsorRow.jsx";
 import UpcomingSection from "../components/UpcomingSection.jsx";
 import WatchAgain from "../components/WatchAgain.jsx";
+import CockFightSection from "../components/cockFightSection/CockFightSection.jsx";
+import Button from "../components/ui/Button.jsx";
 import {
   dateFilters,
   leagueGroups,
@@ -14,11 +17,12 @@ import {
   tabOptions,
   upcomingMatches,
 } from "../data/homeData.js";
-import MediaPlaceholder from "../components/MediaPlaceholder.jsx";
-import Button from "../components/ui/Button.jsx";
 
 function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
   const isHot = activeTab === "hot";
+  const football = activeTab === "football";
+  const cockfighting = activeTab === "cockfighting";
+
   const [showMoreCompetitions, setShowMoreCompetitions] = useState(false);
 
   const filteredMatches = useMemo(() => {
@@ -58,8 +62,10 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           onChange={onDateChange}
         />
       </div>
-      <LiveHero match={activeLiveMatch} />
-      {isHot ? (
+      {!cockfighting &&
+        <LiveHero match={activeLiveMatch} />
+      }
+      {isHot && (
         <>
           <MediaPlaceholder
             className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
@@ -81,8 +87,23 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
             />
           )}
         </>
-      ) : (
+      )}
+      {football && (
         <UpcomingSection
+          matches={filteredMatches}
+          activeTab={activeTab}
+        // mode={isHot ? 'placeholder' : 'list'}
+        />
+      )}
+      {football && (
+        <UpcomingSection
+          matches={filteredMatches}
+          activeTab={activeTab}
+        // mode={isHot ? 'placeholder' : 'list'}
+        />
+      )}
+      {cockfighting && (
+        <CockFightSection
           matches={filteredMatches}
           activeTab={activeTab}
         // mode={isHot ? 'placeholder' : 'list'}
