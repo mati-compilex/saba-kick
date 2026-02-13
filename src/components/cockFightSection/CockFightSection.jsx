@@ -5,10 +5,14 @@ import History from './History'
 
 const CockFightSection = () => {
   return (
-    <div>
-      <Channels />
+    <div >
+     <div  className='mb-[28px] mt-[13px]'>
+      <Channels isLive={true}/>
+      </div>
       <LiveStream className="h-[182px]"/>
-      <Channels />
+       <div  className='mt-[19px] mb-[20px] '>
+      <Channels isLive={false}/>
+      </div>
       <History />
     </div>
   )
