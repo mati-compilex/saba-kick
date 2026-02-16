@@ -4,37 +4,31 @@ const historyData = [
     id: 1,
     label: "CPC 2",
     date: "2024-06-01",
-    result: "CPC 2 won",
   },
   {
     id: 2,
     label: "CPC 03",
     date: "2024-06-02",
-    result: "CPC 03 won",
   },
   {
     id: 3,
     label: "CPC 04",
     date: "2024-06-03",
-    result: "CPC 04 won",
   },
   {
     id: 4,
     label: "CPC 2",
     date: "2024-06-01",
-    result: "CPC 2 won",
   },
   {
     id: 5,
     label: "CPC 03",
     date: "2024-06-02",
-    result: "CPC 03 won",
   },
   {
     id: 6,
     label: "CPC 04",
     date: "2024-06-03",
-    result: "CPC 04 won",
   },
 ];
 
