@@ -243,26 +243,26 @@ function UpcomingSection({
                           </div>
                         </div>
                         <div className="flex items-center justify-center gap-4 mb-4">
-                          <div className="flex flex-col items-center">
+                          <div className="flex flex-col items-center w-20">
                             <MediaPlaceholder
                               className="w-[52px] h-12 mb-2"
                               text="League Logo"
                               textClassName="text-[8px] font-semibold"
                             />
-                            <div className="text-xs text-gray-900">
+                            <div className="text-xs text-gray-900 text-center">
                               {match.home}
                             </div>
                           </div>
                           <div className="rounded-full bg-gray-900 px-4 py-2 text-sm font-bold text-white -mt-4">
                             {match.score}
                           </div>
-                          <div className="flex flex-col items-center">
+                          <div className="flex flex-col items-center w-20">
                             <MediaPlaceholder
                               className="w-[52px] h-12 mb-2"
                               text="League Logo"
                               textClassName="text-[8px] font-semibold"
                             />
-                            <div className="text-xs text-gray-900">
+                            <div className="text-xs text-gray-900 text-center">
                               {match.away}
                             </div>
                           </div>
