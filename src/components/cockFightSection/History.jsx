@@ -39,32 +39,37 @@ const game = [
 ]
 const History = () => {
   return (
-<div className='bg-lightGray rounded-[17px] p-[13px]'>
-  <div className='bg-white rounded-[13px] py-3 px-5'>
-    {historyData.map((item, index) => (
-      <>
-        <div key={item.id} className="flex justify-between items-center  pt-1">
-          <div>
-            <div className="text-sm text-gray-800">{item.label}</div>
-          </div>
-        </div>
-        <div className={`flex justify-between  items-end ${index !== historyData.length - 1 ? 'border-b border-[#797979]' : ''}`}>
-          <div className='bg-lightGray rounded-full items-center mb-2'>
-            <div>
-              {game.map((g, gIndex) => (
-                <span key={gIndex} className='text-xs px-2 py-1 m-1 items-center'>{g}</span>
-              ))}
+    <div className='bg-lightGray rounded-[17px] p-[13px]'>
+      <div className='bg-white rounded-[13px] py-3 px-5'>
+        {historyData.map((item, index) => (
+          <>
+            <div key={item.id} className="flex justify-between items-center  pt-1">
+              <div>
+                <div className="text-sm text-gray-800">{item.label}</div>
+              </div>
             </div>
-          </div>
-          <div className='gap-1 mb-2'>
-            <div className='text-[#c00017] text-[10px] px-2'>Ended</div>
-            <div className='text-[#333333] text-[10px] bg-lightGray px-2 rounded-full'>13:00 PM 29th Jan</div>
-          </div>
-        </div>
-      </>
-    ))}
-  </div>
-</div>
+            <div className={`flex justify-between  items-end ${index !== historyData.length - 1 ? 'border-b border-[#797979]' : ''}`}>
+              <div className='bg-lightGray rounded-full items-center mb-2'>
+                <div>
+                  {game.map((g, gIndex) => (
+                    <span
+                      key={gIndex}
+                      className={`text-xs px-2 py-[2px] m-1 items-center ${gIndex === 0 ? 'bg-white rounded-full' : ''}`}
+                    >
+                      {g}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className='gap-1 mb-2'>
+                <div className='text-[#c00017] text-[10px] px-2'>Ended</div>
+                <div className='text-[#333333] text-[10px] bg-lightGray px-2 rounded-full'>13:00 PM 29th Jan</div>
+              </div>
+            </div>
+          </>
+        ))}
+      </div>
+    </div>
   )
 }
 export default History
