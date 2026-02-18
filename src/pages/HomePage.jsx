@@ -74,7 +74,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           />
           {!showMoreCompetitions && (
             <div className="flex justify-center">
-              <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat" onClick={() => setShowMoreCompetitions(true)}>
+              <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat  text-[14px] !font-normal" onClick={() => setShowMoreCompetitions(true)}>
                 SEE MORE COMING &gt;&gt;
               </Button>
             </div>

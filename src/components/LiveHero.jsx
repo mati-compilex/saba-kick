@@ -14,7 +14,7 @@ function LiveHero({ match, showScreen = false }) {
         <span className="font-semibold uppercase tracking-wide">Advanced</span>
         <Badge tone="live">{match.status ?? 'Live'}</Badge>
       </div> */}
-       <div className="absolute -top-3 left-4">
+      <div className="absolute -top-3 left-[0.5rem]">
         <span className="rounded-md bg-dark px-2 py-1 text-xs font-semibold text-white shadow-md">
           Hottest Match of the day
         </span>
@@ -37,7 +37,11 @@ function LiveHero({ match, showScreen = false }) {
               textClassName="text-[11px]"
             />
           </div>
-          <div className="text-lg font-bold text-gray-800">VS</div>
+          <div className="text-lg font-bold text-gray-800 flex flex-col justify-center"><span className="text-lg font-normal text-gray-800 leading-none text-[12px]">Today </span>
+            <span className="  !text-[13px]">
+              3:30 PM
+            </span>
+          </div>
           <div className="flex flex-col items-center gap-2">
             <MediaPlaceholder
               className="h-12 w-12"
