@@ -182,7 +182,7 @@ function UpcomingSection({
     <>
       <div className="p-4 bg-lightGray pt-4 pb-2 px-3 rounded-2xl">
         <div
-          className="flex items-center justify-between text-sm font-semibold text-gray-900 cursor-pointer select-none"
+          className="flex items-center justify-between text-[10px] font-normal text-gray-900 cursor-pointer select-none"
           onClick={() => setIsUpcomingOpen(!isUpcomingOpen)}
         >
           <div className="flex items-center gap-2">
@@ -290,7 +290,7 @@ function UpcomingSection({
                             : "max-h-0 opacity-0 mt-0"
                         }`}
                       >
-                        <div className="rounded bg-lightGray p-3 text-sm font-medium text-dark">
+                        <div className=" bg-lightGray p-3 text-sm font-medium text-dark">
                           {match.league}
                         </div>
                       </div>
@@ -331,7 +331,7 @@ function UpcomingSection({
         <div className="flex justify-center">
           <Button
             variant="ghost"
-            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat"
+            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat text-[14px] !font-normal"
             onClick={() => setShowMoreCompetitions(true)}
           >
             SEE MORE COMING &gt;&gt;

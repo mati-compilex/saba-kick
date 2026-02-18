@@ -39,7 +39,7 @@ const game = [
 ]
 const History = () => {
   return (
-    <div className='bg-lightGray rounded-[17px] p-[13px]'>
+    <div className='bg-lightGray rounded-[17px] p-[13px] mb-[51px]'>
       <div className='bg-white rounded-[13px] py-3 px-5'>
         {historyData.map((item, index) => (
           <>

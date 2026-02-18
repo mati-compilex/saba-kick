@@ -45,7 +45,7 @@ const Footer = () => {
   ]
 
   return (
-    <div className="space-y-4 bg-white p-4 text-[13px] text-dark">
+    <div className="space-y-4 bg-white px-4 text-[13px] text-dark">
       <div className='lg:flex lg:justify-between '>
         <div className="border-b border-dimGray lg:hidden mb-4"></div>
         <p className='lg:max-w-[300px] mb-10 lg:mb-0 px-1'>

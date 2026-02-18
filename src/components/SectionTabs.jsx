@@ -23,7 +23,7 @@ function SectionTabs({ tabs, activeTab, onChange, isIcons = true, isLive = false
             }`}
         >
           {tab.isLive && (
-            <span className="absolute top-[-12px] right-[-4px] px-1 bg-[#d9001b] rounded-[5px] text-white font-bold  border-2 border-white">Live</span>
+            <span className="absolute top-[-12px] right-[-15px] px-1 bg-[#d9001b] rounded-[5px] text-white font-bold  border-2 border-white">Live</span>
           )}
           {isIcons && (
             <span className="text-xs">
