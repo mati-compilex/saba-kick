@@ -95,13 +95,6 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
         // mode={isHot ? 'placeholder' : 'list'}
         />
       )}
-      {football && (
-        <UpcomingSection
-          matches={filteredMatches}
-          activeTab={activeTab}
-        // mode={isHot ? 'placeholder' : 'list'}
-        />
-      )}
       {cockfighting && (
         <CockFightSection
           matches={filteredMatches}
