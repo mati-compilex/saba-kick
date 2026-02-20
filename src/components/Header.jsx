@@ -2,11 +2,14 @@ import Badge from './ui/Badge.jsx'
 import IconButton from './ui/IconButton.jsx'
 import logo from '../assets/logo.png'
 import headerIcon from '../assets/headerIcon.svg'
+import { Link } from 'react-router-dom'
 function Header() {
   return (
     <div className="flex items-center justify-between bg-lightGray rounded-[16px] py-[10px]">
       <div className="flex items-center gap-2 pl-[15px]">
-        <img src={logo} alt="Logo" className="h-[62px] w-[118px]" />
+        <Link to="/">
+          <img src={logo} alt="Logo" className="h-[62px] w-[118px]" />
+        </Link>
       </div>
       <div className="flex items-center gap-5 px-[15px]">
         <div id="live" className="relative w-[39px] h-[24px] bg-transparent box-border font-extrabold text-[#555555] text-left leading-normal">
@@ -15,7 +18,6 @@ function Header() {
             2
           </div>
         </div>
-
         <img src={headerIcon} alt="" />
       </div>
     </div>

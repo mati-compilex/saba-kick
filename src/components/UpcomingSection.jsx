@@ -242,7 +242,7 @@ function UpcomingSection({
                             {match.time}
                           </div>
                         </div>
-                        <div className="flex items-center justify-center gap-4 mb-4">
+                        <div className="flex items-center justify-center gap-4 mb-4 md:min-h-24">
                           <div className="flex flex-col items-center w-20">
                             <MediaPlaceholder
                               className="w-[52px] h-12 mb-2"
@@ -277,7 +277,7 @@ function UpcomingSection({
                         }`}
                       >
                         <MediaPlaceholder
-                          className="h-96"
+                          className="h-96 "
                           text="LIVE SCREEN"
                           textClassName="text-lg"
                         />
