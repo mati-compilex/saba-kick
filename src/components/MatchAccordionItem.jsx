@@ -6,13 +6,11 @@ import { LiveBadge } from "./LiveBadge.jsx";
 function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
   return (
     <div
-      className={`${!isLastItem ? "border-b border-dimGray pb-3" : ""} ${
-        comp.status === "result" ? "cursor-pointer hover:bg-gray-50" : ""
-      }`}
+      className={` ${comp.status === "result" ? "cursor-pointer" : ""}`}
       onClick={onToggle}
     >
       {isExpanded ? (
-        <div className="border border-dimGray bg-white p-4 relative pt-8">
+        <div className="border  bg-white p-4 relative pt-8">
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -76,9 +74,9 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
           </div>
         </div>
       ) : (
-        <div className="rounded-2xl overflow-hidden border">
+        <div className="rounded-2xl overflow-hidden ">
           <div
-            className="bg-neutral_variant-10 px-3 py-2 border-b flex items-center justify-between gap-2"
+            className="bg-neutral_variant-10 px-3 py-2  flex items-center justify-between gap-2"
             style={{ borderBottomWidth: "0px" }}
           >
             <div className="flex items-center gap-2">
