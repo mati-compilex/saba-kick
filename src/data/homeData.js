@@ -42,6 +42,7 @@ export const liveMatches = [
     status: 'Live',
     sport: 'football',
     dateId: 'd0',
+    videoUrl: 'https://youtu.be/I4N3KBJXgu8?si=PijSifdFxGg-dEHq',
   },
   {
     league: 'East Coast Pro Series',
@@ -53,6 +54,7 @@ export const liveMatches = [
     status: 'Live',
     sport: 'cockfighting',
     dateId: 'd0',
+    videoUrl: 'https://youtu.be/I4N3KBJXgu8?si=PijSifdFxGg-dEHq',
   },
 ]
 
