@@ -55,8 +55,8 @@ body {
 .display-s {
   font-family: "Galano-Grotesque-500", sans-serif;
   font-weight: 500;
-  font-size: 44px;
-  line-height: 52px;
+  font-size: 20px;
+  line-height: 22.44px;
   letter-spacing: 0px;
   color: #161717;
 }
@@ -87,11 +87,11 @@ body {
 }
 
 .title-l {
-  font-family: 'Galano-Grotesque-700', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 38px;
-  letter-spacing: 0.5px;
+  font-family: 'Galano-Grotesque-500', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15.4px;
+  letter-spacing: -1px;
   color: #161717;
 }
 .title-m {
@@ -105,9 +105,9 @@ body {
 .title-s {
   font-family: 'Galano-Grotesque-500', sans-serif;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0.5px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.5px;
   color: #161717;
 }
 
@@ -123,8 +123,8 @@ body {
 .body-m {
   font-family: 'Galano-Grotesque-400', sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   letter-spacing: 0px;
   color: #161717;
 }
@@ -141,7 +141,7 @@ body {
 .label-l {
   font-family: 'Galano-Grotesque-500', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.5px;
   color: #161717;
