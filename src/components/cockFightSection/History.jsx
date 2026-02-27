@@ -1,75 +1,71 @@
-import React from 'react'
+import React from "react";
+import HistoryCard from "./HistoryCard.jsx";
+import { ArrowRightIcon } from "../../assets/icons/arrowRight.jsx";
+
 const historyData = [
   {
     id: 1,
-    label: "CPC 2",
-    date: "2024-06-01",
+    label: "CPC 3",
+    status: "result",
   },
   {
     id: 2,
-    label: "CPC 03",
-    date: "2024-06-02",
+    label: "FG 2",
+    status: "result",
   },
   {
     id: 3,
-    label: "CPC 04",
-    date: "2024-06-03",
+    label: "CPC 1",
+    status: "live",
   },
   {
     id: 4,
     label: "CPC 2",
-    date: "2024-06-01",
+    status: "live",
   },
   {
     id: 5,
-    label: "CPC 03",
-    date: "2024-06-02",
+    label: "FG 1",
+    status: "coming",
+    time: "6:30 PM",
   },
   {
     id: 6,
-    label: "CPC 04",
-    date: "2024-06-03",
+    label: "FG 1",
+    status: "coming",
+    time: "6:45 PM",
+  },
+  {
+    id: 7,
+    label: "CPC 1",
+    status: "coming",
+    time: "7:00 PM",
+  },
+  {
+    id: 8,
+    label: "CPC 2",
+    status: "coming",
+    time: "7:15 PM",
   },
 ];
-
-const game = [
-  "Wala",
-  "Draw",
-  "Meran"
-]
 const History = () => {
   return (
-    <div className='bg-lightGray rounded-[17px] p-[13px] mb-[51px]'>
-      <div className='bg-white rounded-[13px] py-3 px-5'>
-        {historyData.map((item, index) => (
-          <>
-            <div key={item.id} className="flex justify-between items-center  pt-1">
-              <div>
-                <div className="text-sm text-gray-800">{item.label}</div>
-              </div>
-            </div>
-            <div className={`flex justify-between  items-end ${index !== historyData.length - 1 ? 'border-b border-[#797979]' : ''}`}>
-              <div className='bg-lightGray rounded-full items-center mb-2'>
-                <div>
-                  {game.map((g, gIndex) => (
-                    <span
-                      key={gIndex}
-                      className={`text-xs px-2 py-[2px] m-1 items-center ${gIndex === 0 ? 'bg-white rounded-full' : ''}`}
-                    >
-                      {g}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className='gap-1 mb-2'>
-                <div className='text-[#c00017] text-[10px] px-2'>Ended</div>
-                <div className='text-[#333333] text-[10px] bg-lightGray px-2 rounded-full'>13:00 PM 29th Jan</div>
-              </div>
-            </div>
-          </>
-        ))}
+    <div className="bg-lightGray rounded-[17px] p-[13px] mb-[51px]">
+      {historyData.map((item) => (
+        <HistoryCard
+          key={item.id}
+          status={item.status}
+          label={item.label}
+          time={item.time}
+        />
+      ))}
+      <div className="mt-3">
+        <button className="w-full flex items-center justify-center bg-strong-45deg rounded-lg py-2 px-3 pl-4 border border-neutral-30">
+          <span className="label-m !text-neutral-70 mr-[10px]">view all</span>
+          <ArrowRightIcon />
+        </button>
       </div>
     </div>
-  )
-}
-export default History
+  );
+};
+export default History;
