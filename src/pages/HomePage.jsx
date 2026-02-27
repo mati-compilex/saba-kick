@@ -101,9 +101,12 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     <div className="grid gap-3 lg:grid-cols-1">
       <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
         {/* <SponsorRow sponsors={sponsors} /> */}
-        <div>
-          <h1 className="text-[19px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-dark text-left leading-normal px-[12px]">
-            Live Stream, Results and Upcoming Matches
+        <div className="p-[12px]">
+          <h1 className="display-s leading-0 !text-neutral-70">
+            Live Stream, Result,
+          </h1>
+          <h1 className="display-s leading-0 !text-neutral-95">
+            upcoming matches
           </h1>
         </div>
       </div>
