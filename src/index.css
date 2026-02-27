@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Galano-Grotesque-300";
+  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueLight.otf');
+}
+@font-face {
+  font-family: "Galano-Grotesque-400";
+  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueRegular.otf');
+}
+@font-face {
+  font-family: "Galano-Grotesque-500";
+  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueMedium.otf');
+}
+@font-face {
+  font-family: "Galano-Grotesque-600";
+  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueSemibold.otf');
+}
+@font-face {
+  font-family: "Galano-Grotesque-700";
+  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueBold.otf');
+}
 :root {
   color-scheme: light;
 }
@@ -11,4 +32,134 @@ body {
   background: #f6f7f9;
   color: #111827;
   font-family: "Montserrat", sans-serif;
+}
+
+.display-l {
+  font-family: "Galano-Grotesque-600", sans-serif;
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 78px;
+  letter-spacing: -0.25px;
+  color: #161717;
+}
+
+.display-m {
+  font-family: "Galano-Grotesque-500", sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  color: #161717;
+}
+
+.display-s {
+  font-family: "Galano-Grotesque-500", sans-serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0px;
+  color: #161717;
+}
+
+.headline-l {
+  font-family: 'Galano-Grotesque-700', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+.headline-m {
+  font-family: 'Galano-Grotesque-600', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+.headline-s {
+  font-family: 'Galano-Grotesque-600', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+
+.title-l {
+  font-family: 'Galano-Grotesque-700', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+.title-m {
+  font-family: 'Galano-Grotesque-600', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+.title-s {
+  font-family: 'Galano-Grotesque-500', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+
+.body-l {
+  font-family: 'Galano-Grotesque-400', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #161717;
+}
+
+.body-m {
+  font-family: 'Galano-Grotesque-400', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #161717;
+}
+
+.body-s {
+  font-family: 'Galano-Grotesque-400', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #161717;
+}
+
+.label-l {
+  font-family: 'Galano-Grotesque-500', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+
+.label-m {
+  font-family: 'Galano-Grotesque-500', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: #161717;
+}
+.label-s {
+  font-family: 'Galano-Grotesque-500', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  color: #161717;
 }

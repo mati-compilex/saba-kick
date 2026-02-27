@@ -37,7 +37,7 @@ function LiveHero({ match, showScreen = false }) {
               textClassName="text-[11px]"
             />
           </div>
-          <div className="text-lg font-bold text-gray-800 flex flex-col justify-center"><span className="text-lg font-normal text-gray-800 leading-none text-[12px]">Today </span>
+          <div className="text-lg font-bold text-gray-800 flex flex-col justify-center"><span className="text-lg font-normal text-gray-800 leading-none  text-[12px]">Today </span>
             <span className="  !text-[13px]">
               3:30 PM
             </span>
