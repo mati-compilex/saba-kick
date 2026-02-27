@@ -1,6 +1,9 @@
 import logo1xbet from '../assets/1xbet.png'
 import logoDafabet from '../assets/dafabet.png'
 import logoBetway from '../assets/betways.png'
+import { FireFillIcon } from '../assets/icons/fire_fill'
+import { FootballIcon } from '../assets/icons/football_fill'
+import { CockfightFillIcon } from '../assets/icons/cockfight_fill'
 
 export const sponsors = [
   { name: '1XBET', logo: logo1xbet },
@@ -9,9 +12,9 @@ export const sponsors = [
 ]
 
 export const tabOptions = [
-  { id: 'hot', label: 'Hot Matches' },
-  { id: 'football', label: 'Football' },
-  { id: 'cockfighting', label: 'Cockfighting' },
+  { id: 'hot', label: 'Hot Matches', icon: FireFillIcon },
+  { id: 'football', label: 'Football', icon: FootballIcon },
+  { id: 'cockfighting', label: 'Cockfighting', icon: CockfightFillIcon },
 ]
 
 const baseDate = new Date()

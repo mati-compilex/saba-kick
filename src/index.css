@@ -29,9 +29,9 @@
 }
 
 body {
-  background: #f6f7f9;
   color: #111827;
   font-family: "Montserrat", sans-serif;
+  background: #111827 !important;
 }
 
 .display-l {
