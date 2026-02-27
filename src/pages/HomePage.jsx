@@ -1,14 +1,19 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import FilterChips from "../components/FilterChips.jsx";
 import LeagueList from "../components/LeagueList.jsx";
 import LiveHero from "../components/LiveHero.jsx";
-import MediaPlaceholder from "../components/MediaPlaceholder.jsx";
 import SectionTabs from "../components/SectionTabs.jsx";
 import SponsorRow from "../components/SponsorRow.jsx";
 import UpcomingSection from "../components/UpcomingSection.jsx";
+import HotMatches from "../components/HotMatches.jsx";
 import WatchAgain from "../components/WatchAgain.jsx";
 import CockFightSection from "../components/cockFightSection/CockFightSection.jsx";
-import Button from "../components/ui/Button.jsx";
+import brisbaneRoarLogo from "../assets/images/BrisbaneRoarFC.png";
+import aucklandLogo from "../assets/images/AFC.png";
+import borneoLogo from "../assets/images/BorneoFC.png";
+import baliLogo from "../assets/images/BaliFC.png";
+import brvtLogo from "../assets/images/BRVT.png";
+import bacNinhLogo from "../assets/images/BacNinh.png";
 import {
   dateFilters,
   leagueGroups,
@@ -23,8 +28,6 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
   const football = activeTab === "football";
   const cockfighting = activeTab === "cockfighting";
 
-  const [showMoreCompetitions, setShowMoreCompetitions] = useState(false);
-
   const filteredMatches = useMemo(() => {
     return upcomingMatches.filter((match) => {
       const matchesTab = activeTab === "hot" ? true : match.sport === activeTab;
@@ -32,6 +35,47 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       return matchesTab && matchesDate;
     });
   }, [activeTab, activeDate]);
+
+  const hotMatches = useMemo(() => {
+    return [
+      {
+        id: "brisbane-auckland-live",
+        league: "W-League",
+        home: "Brisbane Roar",
+        away: "Auckland FC",
+        scoreHome: 2,
+        scoreAway: 0,
+        status: "Live",
+        homeLogo: brisbaneRoarLogo,
+        awayLogo: aucklandLogo,
+        countryCode: "AU",
+      },
+      {
+        id: "borneo-bali-live",
+        league: "Super League",
+        home: "Borneo FC",
+        away: "Bali United",
+        scoreHome: 1,
+        scoreAway: 1,
+        status: "Live",
+        homeLogo: borneoLogo,
+        awayLogo: baliLogo,
+        countryCode: "ID",
+      },
+      {
+        id: "brvt-bacninh-upcoming",
+        league: "V.League 2",
+        home: "BRVT FC",
+        away: "BACNINH FC",
+        time: "6:30 PM",
+        dateText: "FRI. 02/01",
+        status: "Upcoming",
+        homeLogo: brvtLogo,
+        awayLogo: bacNinhLogo,
+        countryCode: "VN",
+      },
+    ];
+  }, []);
 
   const activeLiveMatch =
     liveMatches.find((match) => {
@@ -65,41 +109,18 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       {!cockfighting &&
         <LiveHero match={activeLiveMatch} />
       }
-      {isHot && (
-        <>
-          <MediaPlaceholder
-            className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
-            text="正在LIVE的內容"
-            textClassName="text-[23px]"
-          />
-          {!showMoreCompetitions && (
-            <div className="flex justify-center">
-              <Button variant="ghost" className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat  text-[14px] !font-normal" onClick={() => setShowMoreCompetitions(true)}>
-                SEE MORE COMING &gt;&gt;
-              </Button>
-            </div>
-          )}
-          {showMoreCompetitions && (
-            <MediaPlaceholder
-              className={`h-[544px] mt-6 bg-lightGray transition-all duration-500`}
-              text="Upcoming & Ended"
-              textClassName="text-[23px]"
-            />
-          )}
-        </>
-      )}
-      {football && (
+      {isHot && <HotMatches matches={hotMatches} />}
+      {football  && (
         <UpcomingSection
           matches={filteredMatches}
           activeTab={activeTab}
-        // mode={isHot ? 'placeholder' : 'list'}
+          mode="list"
         />
       )}
       {cockfighting && (
         <CockFightSection
           matches={filteredMatches}
           activeTab={activeTab}
-        // mode={isHot ? 'placeholder' : 'list'}
         />
       )}
     </div>
