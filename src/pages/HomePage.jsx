@@ -3,7 +3,6 @@ import FilterChips from "../components/FilterChips.jsx";
 import LeagueList from "../components/LeagueList.jsx";
 import LiveHero from "../components/LiveHero.jsx";
 import SectionTabs from "../components/SectionTabs.jsx";
-import SponsorRow from "../components/SponsorRow.jsx";
 import UpcomingSection from "../components/UpcomingSection.jsx";
 import HotMatches from "../components/HotMatches.jsx";
 import WatchAgain from "../components/WatchAgain.jsx";
@@ -20,9 +19,8 @@ import {
   dateFilters,
   leagueGroups,
   liveMatches,
-  sponsors,
   tabOptions,
-  upcomingMatches,
+  upcomingMatches
 } from "../data/homeData.js";
 
 function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
@@ -102,7 +100,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
   return (
     <div className="grid gap-3 lg:grid-cols-1">
       <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
-        <SponsorRow sponsors={sponsors} />
+        {/* <SponsorRow sponsors={sponsors} /> */}
         <div>
           <h1 className="text-[19px] lg:w-full font-monserrat bg-transparent box-border font-semibold text-dark text-left leading-normal px-[12px]">
             Live Stream, Results and Upcoming Matches
