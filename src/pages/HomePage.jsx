@@ -10,6 +10,8 @@ import WatchAgain from "../components/WatchAgain.jsx";
 import CockFightSection from "../components/cockFightSection/CockFightSection.jsx";
 import brisbaneRoarLogo from "../assets/images/BrisbaneRoarFC.png";
 import aucklandLogo from "../assets/images/AFC.png";
+import brentfordLogo from "../assets/images/BrentfordFC.png";
+import chelseaLogo from "../assets/images/chelsea.png";
 import borneoLogo from "../assets/images/BorneoFC.png";
 import baliLogo from "../assets/images/BaliFC.png";
 import brvtLogo from "../assets/images/BRVT.png";
@@ -35,6 +37,24 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
       return matchesTab && matchesDate;
     });
   }, [activeTab, activeDate]);
+
+  const homeLiveMatch = useMemo(() => ({
+    id: "live-hero-brisbane-auckland",
+    league: "Premier League",
+    home: "Chelsea FC",
+    away: "Brentford FC",
+    scoreHome: 3,
+    scoreAway: 4,
+    status: "Live",
+    oddsHome: "1.22",
+    oddsAway: "4.3",
+    homeLogo: chelseaLogo,
+    awayLogo: brentfordLogo,
+    countryCode: "GB-ENG",
+    time: "63:12",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // poster: brentfordLogo,
+  }), []);
 
   const hotMatches = useMemo(() => {
     return [
@@ -77,12 +97,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     ];
   }, []);
 
-  const activeLiveMatch =
-    liveMatches.find((match) => {
-      const matchesTab = activeTab === "hot" ? true : match.sport === activeTab;
-      const matchesDate = activeDate ? match.dateId === activeDate : true;
-      return matchesTab && matchesDate;
-    }) ?? liveMatches[0];
+  // active live match is resolved in HomeAside
 
   return (
     <div className="grid gap-3 lg:grid-cols-1">
@@ -106,9 +121,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           onChange={onDateChange}
         />
       </div>
-      {!cockfighting &&
-        <LiveHero match={activeLiveMatch} />
-      }
+      {!cockfighting && <LiveHero match={homeLiveMatch} />}
       {isHot && <HotMatches matches={hotMatches} />}
       {football  && (
         <UpcomingSection
