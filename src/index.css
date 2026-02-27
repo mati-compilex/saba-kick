@@ -1,41 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: "Galano-Grotesque-300";
-  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueLight.otf');
+  src: url("./assets/fonts/galano-grotesque/GalanoGrotesqueLight.otf");
 }
 @font-face {
   font-family: "Galano-Grotesque-400";
-  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueRegular.otf');
+  src: url("./assets/fonts/galano-grotesque/GalanoGrotesqueRegular.otf");
 }
 @font-face {
   font-family: "Galano-Grotesque-500";
-  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueMedium.otf');
+  src: url("./assets/fonts/galano-grotesque/GalanoGrotesqueMedium.otf");
 }
 @font-face {
   font-family: "Galano-Grotesque-600";
-  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueSemibold.otf');
+  src: url("./assets/fonts/galano-grotesque/GalanoGrotesqueSemibold.otf");
 }
 @font-face {
   font-family: "Galano-Grotesque-700";
-  src: url('./assets/fonts/galano-grotesque/GalanoGrotesqueBold.otf');
-}
+  src: url("./assets/fonts/galano-grotesque/GalanoGrotesqueBold.otf");
+} */
 :root {
   color-scheme: light;
 }
 
 body {
-  background: #f6f7f9;
   color: #111827;
-  font-family: "Montserrat", sans-serif;
+  background: #111827 !important;
+  font-family: "Galano Grotesque", sans-serif;
 }
 
 .display-l {
-  font-family: "Galano-Grotesque-600", sans-serif;
+  
   font-weight: 600;
   font-size: 57px;
   line-height: 78px;
@@ -44,7 +44,7 @@ body {
 }
 
 .display-m {
-  font-family: "Galano-Grotesque-500", sans-serif;
+  
   font-weight: 500;
   font-size: 45px;
   line-height: 56px;
@@ -53,7 +53,7 @@ body {
 }
 
 .display-s {
-  font-family: "Galano-Grotesque-500", sans-serif;
+  
   font-weight: 500;
   font-size: 44px;
   line-height: 52px;
@@ -62,7 +62,7 @@ body {
 }
 
 .headline-l {
-  font-family: 'Galano-Grotesque-700', sans-serif;
+ 
   font-weight: 700;
   font-size: 32px;
   line-height: 42px;
@@ -70,7 +70,7 @@ body {
   color: #161717;
 }
 .headline-m {
-  font-family: 'Galano-Grotesque-600', sans-serif;
+  
   font-weight: 600;
   font-size: 28px;
   line-height: 40px;
@@ -78,7 +78,7 @@ body {
   color: #161717;
 }
 .headline-s {
-  font-family: 'Galano-Grotesque-600', sans-serif;
+  
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
@@ -87,7 +87,7 @@ body {
 }
 
 .title-l {
-  font-family: 'Galano-Grotesque-700', sans-serif;
+ 
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
@@ -95,7 +95,7 @@ body {
   color: #161717;
 }
 .title-m {
-  font-family: 'Galano-Grotesque-600', sans-serif;
+  
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
@@ -103,7 +103,7 @@ body {
   color: #161717;
 }
 .title-s {
-  font-family: 'Galano-Grotesque-500', sans-serif;
+  
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
@@ -112,7 +112,7 @@ body {
 }
 
 .body-l {
-  font-family: 'Galano-Grotesque-400', sans-serif;
+  
   font-weight: 400;
   font-size: 22px;
   line-height: 32px;
@@ -121,7 +121,7 @@ body {
 }
 
 .body-m {
-  font-family: 'Galano-Grotesque-400', sans-serif;
+  
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -130,7 +130,7 @@ body {
 }
 
 .body-s {
-  font-family: 'Galano-Grotesque-400', sans-serif;
+  
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -139,24 +139,48 @@ body {
 }
 
 .label-l {
-  font-family: 'Galano-Grotesque-500', sans-serif;
+  
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.5px;
   color: #161717;
 }
-
+.label-live {
+  
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.5;
+  color: #ffdddf;
+}
+.label-country {
+  
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 12px;
+  letter-spacing: -0.5;
+  color: #f3f3f4;
+}
 .label-m {
-  font-family: 'Galano-Grotesque-500', sans-serif;
+  
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.5px;
   color: #161717;
 }
+.label-sm {
+  
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15.4px;
+  letter-spacing: 1px;
+  color: #f3f3f4;
+}
 .label-s {
-  font-family: 'Galano-Grotesque-500', sans-serif;
+  
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;

@@ -1,4 +1,4 @@
-export const LineArrowTopIcon = (
+export const LineArrowTopIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_101_2828)">
             <path d="M12 22.4464L12 1.55359" stroke="#050E1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

@@ -319,8 +319,8 @@ function UpcomingSection({
       )}
 
       {showMoreCompetitions && (
-        <div className="rounded-2xl bg-lightGray p-4">
-          <div className="rounded-2xl bg-white p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+        <div className="rounded-2xl p-4">
+          <div className="rounded-2xl p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {moreCompetitionsData.map((comp, index) => (
               <MatchAccordionItem
                 key={comp.id}

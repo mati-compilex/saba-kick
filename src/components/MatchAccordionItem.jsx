@@ -1,17 +1,16 @@
 import MediaPlaceholder from "./MediaPlaceholder.jsx";
 import { CountryFlagIcon } from "../assets/icons/countryFlag.jsx";
 import { ReplayIcon } from "../assets/icons/replay.jsx";
+import { LiveBadge } from "./LiveBadge.jsx";
 
 function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
   return (
     <div
-      className={`${!isLastItem ? "border-b border-dimGray pb-3" : ""} ${
-        comp.status === "result" ? "cursor-pointer hover:bg-gray-50" : ""
-      }`}
+      className={` ${comp.status === "result" ? "cursor-pointer" : ""}`}
       onClick={onToggle}
     >
       {isExpanded ? (
-        <div className="border border-dimGray bg-white p-4 relative pt-8">
+        <div className="border  bg-white p-4 relative pt-8">
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -75,9 +74,9 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
           </div>
         </div>
       ) : (
-        <div className="rounded-2xl overflow-hidden border">
+        <div className="rounded-2xl overflow-hidden ">
           <div
-            className="bg-neutral_variant-10 px-3 py-2 border-b flex items-center justify-between gap-2"
+            className="bg-neutral_variant-10 px-3 py-2  flex items-center justify-between gap-2"
             style={{ borderBottomWidth: "0px" }}
           >
             <div className="flex items-center gap-2">
@@ -89,20 +88,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
                 Coming soon
               </div>
             ) : comp.status === "live" ? (
-              <div className="bg-red-30 !text-red-90 label-s py-[2px] px-[6px] rounded-[20px] text-center flex items-center">
-                <span className="text-red-90 label-s pr-[4px]">
-                  <svg
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#FFDDDF" />
-                  </svg>
-                </span>
-                LIVE
-              </div>
+              LiveBadge
             ) : (
               <div className="!text-neutral-95 label-m flex items-center gap-1">
                 Replay
