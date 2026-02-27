@@ -1,6 +1,7 @@
 import MediaPlaceholder from "./MediaPlaceholder.jsx";
 import { CountryFlagIcon } from "../assets/icons/countryFlag.jsx";
 import { ReplayIcon } from "../assets/icons/replay.jsx";
+import { LiveBadge } from "./LiveBadge.jsx";
 
 function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
   return (
@@ -89,20 +90,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
                 Coming soon
               </div>
             ) : comp.status === "live" ? (
-              <div className="bg-red-30 !text-red-90 label-s py-[2px] px-[6px] rounded-[20px] text-center flex items-center">
-                <span className="text-red-90 label-s pr-[4px]">
-                  <svg
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#FFDDDF" />
-                  </svg>
-                </span>
-                LIVE
-              </div>
+              LiveBadge
             ) : (
               <div className="!text-neutral-95 label-m flex items-center gap-1">
                 Replay
