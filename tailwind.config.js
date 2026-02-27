@@ -106,7 +106,7 @@ export default {
           80: '#CDCFD2',
           90: '#E6E7E9',
           95: '#F3F3F4',
-          95: '#FFFFFF',
+          // 95: '#FFFFFF',
         },
         neutral_variant: {
           5: '#181E31',

@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 
 function Layout({ children, aside }) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black rounded-t-[28px]">
       <div className="mx-auto w-full max-w-[1200px] px-2 py-2">
         <div className="grid gap-6 lg:grid-cols-1">
           <main className="space-y-[10px]">

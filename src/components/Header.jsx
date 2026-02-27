@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 import  {MenuFill}  from '../assets/icons/menu_fill.jsx'
 function Header() {
   return (
-    <div className="flex items-center justify-between bg-lightGray rounded-[16px] py-[10px]">
+    <div className="flex items-center justify-between bg-lightGray rounded-[16px] pt-[10px] bg-black">
       <div className="flex items-center gap-2 pl-[15px]">
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-[16px] w-[54px]" />
+          <img src={logo} alt="Logo" className=" w-[54px]" />
         </Link>
       </div>
       <div className="flex items-center gap-5 px-[15px]">
