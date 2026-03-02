@@ -108,7 +108,7 @@ const Footer = () => {
       <div className="!mt-0 py-4 px-2 rounded-b-[20px] !text-neutral-95 body-m bg-neutral_variant-10">
         © 2026 SABA. All Rights Reserved.
       </div>
-    </>
+    </div>
   )
 }
 
