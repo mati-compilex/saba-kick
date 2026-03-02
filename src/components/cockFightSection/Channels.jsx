@@ -31,6 +31,7 @@ export function ChannelTabs({ tabs, activeTab, onChange, isIcons = true, classNa
             ? '!text-neutral-95 border  before:absolute before:inset-0 before:bg-nv-45deg before:-z-10 before:rounded-lg'
             : ' !text-neutral-60'
             }`}
+            style={{borderImageSource:"linear-gradient(108.69deg, rgba(126, 132, 151, 0.82) 0.46%, rgba(83, 91, 117, 0) 50.27%, rgba(80, 86, 98, 0.42) 100.08%)"}}
         >
           {tab.icon && (
             <span className="flex items-center">
