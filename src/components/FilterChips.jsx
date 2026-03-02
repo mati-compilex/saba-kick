@@ -45,7 +45,7 @@ function FilterChips({ filters, activeFilter, onChange }) {
   }
 
   return (
-    <div className="flex items-center lg:justify-center gap-2 relative">
+    <div className="flex items-center lg:justify-center lg:gap-2 relative">
       <div className="relative">
         <button 
           onClick={() => setShowCalendar(!showCalendar)}
