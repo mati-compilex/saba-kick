@@ -1,22 +1,21 @@
 import React from 'react'
 import Channels from './Channels'
-import LiveStream from './LiveStream'
 import History from './History'
+import HLSStream from '../HLSStream'
 import { useState, useEffect, useRef } from 'react'
 import ReactCountryFlag from "react-country-flag"
 import arrowDown from '../../assets/downArrow.png'
 const countries = [
+  { code: 'KH', name: 'Cambodia' },
   { code: 'TH', name: 'Thailand' },
-  { code: 'US', name: 'United States' },
-  { code: 'GB', name: 'United Kingdom' },
   { code: 'PH', name: 'Philippines' },
   { code: 'VN', name: 'Vietnam' },
-  { code: 'IN', name: 'India' },
 ]
 
 const CockFightSection = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
+  const [activeStream, setActiveStream] = useState('https://live3.krikyabd.me/hls/stream.m3u8')
   const dropdownRef = useRef(null)
 
   useEffect(() => {
@@ -60,11 +59,8 @@ const CockFightSection = () => {
         <div className='border-r border-neutral_variant-20 h-8 align-center mr-2'></div>
         <Channels isLive={true} />
       </div>
-      <LiveStream className="h-[182px]" />
-      <div className='mt-[19px] mb-[20px] '>
-        <Channels isLive={false} />
-      </div>
-      <History />
+      <HLSStream url={activeStream} className="h-[182px] rounded-lg overflow-hidden mb-[19px]" />
+      <History selectedCountry={selectedCountry} />
     </div>
   )
 }
