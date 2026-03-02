@@ -10,7 +10,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
       onClick={onToggle}
     >
       {isExpanded ? (
-        <div className="border  bg-white p-4 relative pt-8">
+        <div className="bg-emphasis p-4 relative pt-8 rounded-[20px] overflow-hidden">
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -26,14 +26,17 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
               />
             </div>
 
-            <div className="absolute top-0 left-1/2 -translate-x-1/2">
-              <div className="bg-grayMedium text-dark px-6 py-1 rounded-b-xl font-bold text-sm shadow-sm">
+            <div
+              className="absolute top-0 left-0 w-full"
+              style={{ backgroundColor: "#283252" }}
+            >
+              <div className="!text-white px-[12px] py-[12px] font-bold text-sm shadow-sm label-m text-center">
                 Ended
               </div>
             </div>
 
             <div className="flex justify-center mb-6 mt-2">
-              <div className="bg-grayLight px-3 py-1.5 rounded-full text-[9px] font-medium text-dark">
+              <div className="!text-white label-m px-3 py-1.5 rounded-full text-[9px] font-medium text-dark">
                 {comp.league}
               </div>
             </div>
@@ -49,7 +52,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
                   {comp.home}
                 </div>
               </div>
-              <div className="rounded-full bg-gray-900 px-4 py-2 text-sm font-bold text-white -mt-4">
+              <div className="rounded-full px-4 py-2 font-bold !text-white headline-m">
                 {comp.homeScore} : {comp.awayScore}
               </div>
               <div className="flex flex-col items-center gap-2">
@@ -84,7 +87,7 @@ function MatchAccordionItem({ comp, isExpanded, onToggle, isLastItem }) {
               <span className="label-m !text-white">{comp.league}</span>
             </div>
             {comp.status === "coming" ? (
-              <div className="bg-green-5 !text-green-50 label-m px-2 py-0.5 rounded-[20px] min-w-[112px] text-center">
+              <div className="bg-green-5 !text-green-50 label-m px-2 py-[4px] rounded-[20px] min-w-[112px] text-center">
                 Coming soon
               </div>
             ) : comp.status === "live" ? (
