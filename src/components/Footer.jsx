@@ -55,12 +55,12 @@ const Footer = () => {
           <p className='lg:max-w-[300px] lg:mb-0 body-m !text-neutral-60'>
             This website is operated by Westward Way Tech N.V. (registration No. 158203), with address at Abraham de Veerstraat 9, Curaçao. This website is operated under license number: OGL/2020A/569/0357 issued by Gaming Service Provider, Authorised and Regulated by the Government of Curaçao. Apollo MKT Limited, Reg. No. HE 418346, having its registered office at AGIOU FOTIOU 12, NICOSIA, 1077, CYPRUS, which provides management, payment and support services related to the operation of the website. Gambling can be addictive. Play responsibly.
           </p>
-          <div className="flex justify-between text-[13px] lg:w-full pt-[30px]">
+          <div className="flex justify-between text-[13px] lg:w-full pt-[10px]">
             <div className='grid grid-cols-2 w-full'>
               {sections.map((section) => (
                 <div key={section.title} className="py-[14px] title-s !text-neutral-95">
                   <div
-                    className="flex items-center gap-2 text-dark font-medium cursor-pointer select-none"
+                    className="flex items-center gap-2 text-[13px] text-dark font-medium cursor-pointer select-none"
                   // onClick={() => toggleSection(section.title)}
                   >
                     {/* <img
@@ -71,7 +71,7 @@ const Footer = () => {
                     {section.title}
                   </div>
                   <div
-                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${openSections[section.title] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out  ${openSections[section.title] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -89,18 +89,18 @@ const Footer = () => {
             </div>
 
           </div>
-          <div className="flex items-end gap-2">
+          <div className="flex items-end gap-2 pt-[14px]">
             <span className="inline-flex items-center justify-center">
-              <img src={facebookIcon} alt="Facebook" className="h-8 w-8" />
+              <img src={facebookIcon} alt="Facebook" className="h-[44px] w-[44px]" />
             </span>
             <span className="inline-flex items-center justify-center">
-              <img src={instagramIcon} alt="Instagram" className="h-8 w-8" />
+              <img src={instagramIcon} alt="Instagram" className="h-[44px] w-[44px]" />
             </span>
             <span className="inline-flex items-center justify-center">
-              <img src={telegram} alt="YouTube" className="h-8 w-8" />
+              <img src={telegram} alt="YouTube" className="h-[44px] w-[44px]" />
             </span>
             <span className="inline-flex items-center justify-center">
-              <img src={whatsapp} alt="WhatsApp" className="h-8 w-8" />
+              <img src={whatsapp} alt="WhatsApp" className="h-[44px] w-[44px]" />
             </span>
           </div>
         </div>
