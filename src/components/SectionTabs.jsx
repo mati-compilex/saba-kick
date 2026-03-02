@@ -2,7 +2,7 @@
 
 function SectionTabs({ tabs, activeTab, onChange, isIcons = true ,className}) {
   return (
-    <div className="flex flex-wrap lg:justify-center gap-2 bg-lightGray md:w-fit border-b-2 border-neutral_variant-20">
+    <div className="flex flex-wrap lg:justify-center gap-2 bg-lightGray md:w-fit border-b-2 border-neutral_variant-20 px-2">
       {tabs.map((tab) => (
         <button
           key={tab.id}

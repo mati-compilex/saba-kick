@@ -1,58 +1,21 @@
 import { useState } from "react";
-import Button from "./ui/Button.jsx";
-import MatchCard from "./MatchCard.jsx";
-import MatchAccordionItem from "./MatchAccordionItem.jsx";
-import MediaPlaceholder from "./MediaPlaceholder.jsx";
+import cockfightingIcon from "../assets/cockfightingIcon.png";
 import fireIcon from "../assets/fireIcon.png";
 import footballIcon from "../assets/footballIcon.png";
-import cockfightingIcon from "../assets/cockfightingIcon.png";
+import { dateFilters } from "../data/homeData.js";
+import FilterChips from "./FilterChips.jsx";
+import HotMatches from "./HotMatches.jsx";
+import MatchAccordionItem from "./MatchAccordionItem.jsx";
 
 function UpcomingSection({
   matches,
   mode = "placeholder",
   activeTab = "football",
+  onDateChange,
+  activeDate,
 }) {
-  const [expandedLiveIds, setExpandedLiveIds] = useState([]);
-  const [showMoreCompetitions, setShowMoreCompetitions] = useState(false);
-
-  const tabInfo = {
-    football: { label: "Football", icon: footballIcon },
-    cockfighting: { label: "Cockfighting", icon: cockfightingIcon },
-    hot: { label: "Hot Matches", icon: fireIcon },
-  };
-
-  const currentTab = tabInfo[activeTab] || tabInfo.football;
-
-  const liveMatchesData = [
-    {
-      id: "live-1",
-      league: "Europa League",
-      home: "Manchester United",
-      away: "Barcelona",
-      score: "3 : 2",
-      time: "13:00 ~ 20:00",
-    },
-    {
-      id: "live-2",
-      league: "Champions League",
-      home: "Real Madrid",
-      away: "Liverpool",
-      score: "1 : 1",
-      time: "14:00 ~ 21:00",
-    },
-    {
-      id: "live-3",
-      league: "Premier League",
-      home: "Arsenal",
-      away: "Chelsea",
-      score: "2 : 0",
-      time: "12:00 ~ 19:00",
-    },
-  ];
   const [expandedMatchIds, setExpandedMatchIds] = useState([]);
-  const [isUpcomingOpen, setIsUpcomingOpen] = useState(true);
   const hasMatches = matches.length > 0;
-  const showPlaceholder = mode === "placeholder";
   const showList = mode === "list";
 
   const handleMatchClick = (match) => {
@@ -63,14 +26,6 @@ function UpcomingSection({
           : [...prev, match.id],
       );
     }
-  };
-
-  const handleLiveMatchClick = (matchId) => {
-    setExpandedLiveIds((prev) =>
-      prev.includes(matchId)
-        ? prev.filter((id) => id !== matchId)
-        : [...prev, matchId],
-    );
   };
 
   const moreCompetitionsData = [
@@ -186,7 +141,7 @@ function UpcomingSection({
 
   return (
     <>
-      <div className="p-4 bg-lightGray pt-4 pb-2 px-3 rounded-2xl">
+      {/* <div className="p-4 bg-lightGray pt-4 pb-2 px-3 rounded-2xl">
         <div
           className="flex items-center justify-between text-[10px] font-normal text-gray-900 cursor-pointer select-none"
           onClick={() => setIsUpcomingOpen(!isUpcomingOpen)}
@@ -307,43 +262,38 @@ function UpcomingSection({
             ) : null}
           </div>
         </div>
-      </div>
-      {!showMoreCompetitions && showList && hasMatches && (
-        <div className="rounded-2xl bg-lightGray p-4 mb-4">
+      </div> */}
+      {showList && hasMatches && (
+        <div className="rounded-2xl bg-lightGray">
           <div className="space-y-3">
-            {matches.map((match, index) => (
+            <HotMatches matches={matches} />
+            {/* {matches.map((match, index) => (
               <MatchCard key={`${match.home}-${index}`} match={match} />
-            ))}
+            ))} */}
           </div>
         </div>
       )}
 
-      {showMoreCompetitions && (
-        <div className="rounded-2xl py-4">
-          <div className="rounded-2xl py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-            {moreCompetitionsData.map((comp, index) => (
-              <MatchAccordionItem
-                key={comp.id}
-                comp={comp}
-                isExpanded={expandedMatchIds.includes(comp.id)}
-                onToggle={() => handleMatchClick(comp)}
-                // isLastItem={index === moreCompetitionsData.length - 1}
-              />
-            ))}
-          </div>
+      <FilterChips
+        filters={dateFilters}
+        activeFilter={activeDate}
+        onChange={onDateChange}
+        // showLive={true}
+      />
+
+      <div className="rounded-2xl p-4">
+        <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {moreCompetitionsData.map((comp, index) => (
+            <MatchAccordionItem
+              key={comp.id}
+              comp={comp}
+              isExpanded={expandedMatchIds.includes(comp.id)}
+              onToggle={() => handleMatchClick(comp)}
+              // isLastItem={index === moreCompetitionsData.length - 1}
+            />
+          ))}
         </div>
-      )}
-      {!showMoreCompetitions && (
-        <div className="flex justify-center">
-          <Button
-            variant="ghost"
-            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat text-[14px] !font-normal"
-            onClick={() => setShowMoreCompetitions(true)}
-          >
-            SEE MORE COMING &gt;&gt;
-          </Button>
-        </div>
-      )}
+      </div>
     </>
   );
 }

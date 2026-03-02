@@ -42,7 +42,13 @@ body {
   letter-spacing: -0.25px;
   color: #161717;
 }
-
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
 .display-m {
   
   font-weight: 500;

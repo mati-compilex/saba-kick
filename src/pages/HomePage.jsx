@@ -99,7 +99,6 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
 
   return (
     <div className="grid gap-3 lg:grid-cols-1">
-      <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-2">
         {/* <SponsorRow sponsors={sponsors} /> */}
         <div className="p-[12px]">
           <h1 className="display-s leading-0 !text-neutral-70">
@@ -109,27 +108,35 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
             upcoming matches
           </h1>
         </div>
-      </div>
       <div className="flex flex-col lg:flex-row lg:justify-between gap-2">
         <SectionTabs
           tabs={tabOptions}
           activeTab={activeTab}
           onChange={onTabChange}
         />
-        <FilterChips
-          filters={dateFilters}
-          activeFilter={activeDate}
-          onChange={onDateChange}
-        />
+
       </div>
       {!cockfighting && <LiveHero match={homeLiveMatch} />}
-      {isHot && <HotMatches matches={hotMatches} />}
-      {football  && (
+      {isHot &&
         <UpcomingSection
-          matches={filteredMatches}
+          matches={hotMatches}
           activeTab={activeTab}
+          activeDate={activeDate}
+          onDateChange={onDateChange}
           mode="list"
         />
+        // <HotMatches matches={hotMatches} />
+      }
+      {football && (
+        <>
+          <UpcomingSection
+            matches={hotMatches}
+            activeTab={activeTab}
+            activeDate={activeDate}
+            onDateChange={onDateChange}
+            mode="list"
+          />
+        </>
       )}
       {cockfighting && (
         <CockFightSection

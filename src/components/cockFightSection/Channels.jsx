@@ -21,13 +21,13 @@ const tabs = [
 
 export function ChannelTabs({ tabs, activeTab, onChange, isIcons = true, className }) {
   return (
-    <div className="flex flex-wrap justify-between lg:justify-center lg:gap-2 md:w-fit ">
+    <div className="flex gap-2 flex-nowrap">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           type="button"
           onClick={() => onChange?.(tab.id)}
-          className={`relative flex items-center gap-1.5 px-3  text-xs font-normal rounded-full h-[32px] bg-emphasis label-m transition border border-variant-20 ${className} ${activeTab === tab.id
+          className={`relative flex items-center gap-1.5 px-3 text-xs font-normal rounded-full h-[32px] bg-emphasis label-m transition border border-variant-20 whitespace-nowrap flex-shrink-0 ${className} ${activeTab === tab.id
             ? '!text-neutral-95 border  before:absolute before:inset-0 before:bg-nv-45deg before:-z-10 before:rounded-lg'
             : ' !text-neutral-60'
             }`}
@@ -64,7 +64,9 @@ function Channels({ isLive }) {
 
   return (
     <>
-      <div className="">
+      <div className={`overflow-x-scroll scrollbar-hide scrollbar-none`}
+        style={ isLive ? { maxWidth: 'calc(100vw - 12.5rem)' } : {} }
+      >
         <ChannelTabs tabs={isLive ? liveTabs : tabs}
           activeTab={activeTab} onChange={onTabChange} isIcons={false}
           className="bg-emphasis before:absolute before:inset-0 before:bg-nv-45deg before:-z-10 before:rounded-lg" />
