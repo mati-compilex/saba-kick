@@ -14,7 +14,6 @@ function UpcomingSection({
   onDateChange,
   activeDate,
 }) {
-
   const [expandedMatchIds, setExpandedMatchIds] = useState([]);
   const hasMatches = matches.length > 0;
   const showList = mode === "list";
@@ -28,7 +27,6 @@ function UpcomingSection({
       );
     }
   };
-
 
   const moreCompetitionsData = [
     {
@@ -276,26 +274,26 @@ function UpcomingSection({
         </div>
       )}
 
-       <FilterChips
-          filters={dateFilters}
-          activeFilter={activeDate}
-          onChange={onDateChange}
-          // showLive={true}
-        />
+      <FilterChips
+        filters={dateFilters}
+        activeFilter={activeDate}
+        onChange={onDateChange}
+        // showLive={true}
+      />
 
-        <div className="rounded-2xl p-4">
-          <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-            {moreCompetitionsData.map((comp, index) => (
-              <MatchAccordionItem
-                key={comp.id}
-                comp={comp}
-                isExpanded={expandedMatchIds.includes(comp.id)}
-                onToggle={() => handleMatchClick(comp)}
-                // isLastItem={index === moreCompetitionsData.length - 1}
-              />
-            ))}
-          </div>
+      <div className="rounded-2xl p-4">
+        <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {moreCompetitionsData.map((comp, index) => (
+            <MatchAccordionItem
+              key={comp.id}
+              comp={comp}
+              isExpanded={expandedMatchIds.includes(comp.id)}
+              onToggle={() => handleMatchClick(comp)}
+              // isLastItem={index === moreCompetitionsData.length - 1}
+            />
+          ))}
         </div>
+      </div>
     </>
   );
 }

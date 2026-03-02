@@ -1,4 +1,5 @@
 import React from "react";
+import ReactCountryFlag from "react-country-flag";
 import HistoryCard from "./HistoryCard.jsx";
 import { ArrowRightIcon } from "../../assets/icons/arrowRight.jsx";
 
@@ -48,9 +49,24 @@ const historyData = [
     time: "7:15 PM",
   },
 ];
-const History = () => {
+
+const History = ({ selectedCountry }) => {
   return (
-    <div className="bg-lightGray rounded-[17px] mb-[51px]">
+    <div className="bg-lightGray rounded-[17px] py-[13px] mb-[51px]">
+      <div className="px-3 pb-3 mb-2">
+        <div className="flex items-center gap-3">
+          <div
+            className="flex items-center justify-center w-[46px] h-[46px] pt-[6px] pr-3 pb-[6px] pl-3 rounded-[36px] border bg-emphasis"
+            style={{
+              borderColor: "rgba(237, 249, 255, 0.82)",
+            }}
+          >
+            <ReactCountryFlag countryCode={selectedCountry.code} svg />
+          </div>
+          <span className="label-m !text-neutral-95">{selectedCountry.name}</span>
+        </div>
+      </div>
+
       {historyData.map((item) => (
         <HistoryCard
           key={item.id}

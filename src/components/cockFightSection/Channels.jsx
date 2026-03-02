@@ -4,11 +4,12 @@ import LiveStream from "./LiveStream.jsx";
 import { LiveDotIcon } from "../../assets/icons/LiveDot.jsx";
 
 const liveTabs = [
-  { id: "cpc1", label: "CPC 2", isLive: true },
-  { id: "cpc2", label: "CPC 03", isLive: true },
-  { id: "fg1", label: "FG1", isLive: false },
-  { id: "fg2", label: "FG2", isLive: false },
-  { id: "cpc4", label: "CPC 04", isLive: false },
+  { id: "cpc1", label: "CPC 1", url: "https://live3.krikyabd.me/hls/stream.m3u8", isLive: false },
+  { id: "cpc2", label: "CPC 2", url: "https://live6.krikyabd.me/hls/stream.m3u8", isLive: false },
+  { id: "cpc3", label: "CPC 3", url: "https://live2.krikyabd.me/hls/stream.m3u8", isLive: false },
+  { id: "cpc4", label: "CPC 4", url: "https://live4.krikyabd.me/hls/stream.m3u8", isLive: true },
+  { id: "cpc5", label: "CPC 5", url: "https://live5.krikyabd.me/hls/stream.m3u8", isLive: true },
+  { id: "fg3", label: "FG 3", url: "https://live1.krikyabd.me/hls/stream.m3u8", isLive: true },
 ];
 
 const tabs = [
@@ -51,11 +52,15 @@ export function ChannelTabs({ tabs, activeTab, onChange, isIcons = true, classNa
     </div>
   )
 }
-function Channels({ isLive }) {
+function Channels({ isLive, onStreamChange }) {
   const [activeTab, setActiveTab] = useState("cpc1");
 
   const onTabChange = (tabId) => {
     setActiveTab(tabId);
+    const selectedTab = liveTabs.find(tab => tab.id === tabId);
+    if (selectedTab && onStreamChange) {
+      onStreamChange(selectedTab.url);
+    }
   };
 
 
@@ -67,7 +72,7 @@ function Channels({ isLive }) {
       <div className={`overflow-x-scroll scrollbar-hide scrollbar-none`}
         style={ isLive ? { maxWidth: 'calc(100vw - 12.5rem)' } : {} }
       >
-        <ChannelTabs tabs={isLive ? liveTabs : tabs}
+        <ChannelTabs tabs={liveTabs}
           activeTab={activeTab} onChange={onTabChange} isIcons={false}
           className="bg-emphasis before:absolute before:inset-0 before:bg-nv-45deg before:-z-10 before:rounded-lg" />
       </div>
