@@ -102,7 +102,7 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
               src={videoSrc}
               controls
               autoPlay
-              className="w-full h-[220px] object-cover"
+              className="w-full h-[220px] lg:h-[369px] object-cover"
               poster={posterSrc}
             />
             {isLive && (

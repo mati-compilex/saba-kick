@@ -33,7 +33,7 @@ const CockFightSection = () => {
     <div className='m-3'>
       <div className='mb-[28px] mt-[13px] flex text-white'>
         <div className='relative' ref={dropdownRef}>
-          <div onClick={() => setIsOpen(!isOpen)} className='cursor-pointer flex items-center justify-center gap-2 bg-emphasis px-8 py-1 rounded-full mr-2 border border-neutral_variant-20'>
+          <div onClick={() => setIsOpen(!isOpen)} className='cursor-pointer flex items-center justify-center gap-2 bg-emphasis px-6 py-1 rounded-full mr-2 border border-neutral_variant-20'>
             <ReactCountryFlag countryCode={selectedCountry.code} svg style={{ width: '24px', height: '24px' }} />
             <span className='text-sm text-white'>{selectedCountry.name}</span>
             <img src={arrowDown} alt="" />
