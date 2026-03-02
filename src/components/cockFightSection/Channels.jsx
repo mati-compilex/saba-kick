@@ -64,7 +64,9 @@ function Channels({ isLive }) {
 
   return (
     <>
-      <div className="overflow-x-auto">
+      <div className={`overflow-x-scroll scrollbar-hide scrollbar-none`}
+        style={ isLive ? { maxWidth: 'calc(100vw - 12.5rem)' } : {} }
+      >
         <ChannelTabs tabs={isLive ? liveTabs : tabs}
           activeTab={activeTab} onChange={onTabChange} isIcons={false}
           className="bg-emphasis before:absolute before:inset-0 before:bg-nv-45deg before:-z-10 before:rounded-lg" />
