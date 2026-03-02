@@ -50,7 +50,7 @@ const historyData = [
 ];
 const History = () => {
   return (
-    <div className="bg-lightGray rounded-[17px] p-[13px] mb-[51px]">
+    <div className="bg-lightGray rounded-[17px] mb-[51px]">
       {historyData.map((item) => (
         <HistoryCard
           key={item.id}

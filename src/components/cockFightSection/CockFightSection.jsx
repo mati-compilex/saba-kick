@@ -5,7 +5,7 @@ import History from './History'
 
 const CockFightSection = () => {
   return (
-    <div >
+    <div className='m-3'>
      <div  className='mb-[28px] mt-[13px]'>
       <Channels isLive={true}/>
       </div>

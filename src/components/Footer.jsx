@@ -46,7 +46,7 @@ const Footer = () => {
   ]
 
   return (
-    <>
+    <div className='m-3'>
       <div className="space-y-4 bg-normal px-4 text-[13px] text-dark py-[28px] px-[12px] rounded-t-[20px]">
         <div className='lg:flex lg:justify-between '>
           <img src={logo} alt="Logo" className="w-[54px] mb-[8px]" />
