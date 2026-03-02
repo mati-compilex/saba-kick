@@ -34,11 +34,11 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
               <img
                 src={match.homeLogo}
                 alt={match.home}
-                className="w-[64px] h-[64px] mb-2 rounded-xl object-contain"
+                className="w-[36px] h-[36px] mb-2 rounded-xl object-contain"
               />
             ) : (
               <MediaPlaceholder
-                className="w-[64px] h-[64px] mb-2 rounded-xl"
+                className="w-[36px] h-[36px] mb-2 rounded-xl"
                 text="Logo"
                 textClassName="text-[8px] font-semibold text-white/80"
               />
@@ -73,11 +73,11 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
               <img
                 src={match.awayLogo}
                 alt={match.away}
-                className="w-[64px] h-[64px] mb-2 rounded-xl object-contain"
+                className="w-[36px] h-[36px] mb-2 rounded-xl object-contain"
               />
             ) : (
               <MediaPlaceholder
-                className="w-[64px] h-[64px] mb-2 rounded-xl"
+                className="w-[36px] h-[36px] mb-2 rounded-xl"
                 text="Logo"
                 textClassName="text-[8px] font-semibold text-white/80"
               />

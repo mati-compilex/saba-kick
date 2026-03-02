@@ -40,11 +40,11 @@ function HotMatches({ matches = [] }) {
                         <img
                           src={m.homeLogo}
                           alt={m.home}
-                          className="w-[64px] h-[64px] mb-2 rounded-xl object-contain"
+                          className="w-[32.59px] h-[44px] mb-2 rounded-xl object-contain"
                         />
                       ) : (
                         <MediaPlaceholder
-                          className="w-[64px] h-[64px] mb-2 rounded-xl"
+                          className="w-[32.59px] h-[44px] mb-2 rounded-xl"
                           text="Logo"
                           textClassName="text-[8px] font-semibold text-white/80"
                         />
@@ -92,11 +92,11 @@ function HotMatches({ matches = [] }) {
                         <img
                           src={m.awayLogo}
                           alt={m.away}
-                          className="w-[64px] h-[64px] mb-2 rounded-xl object-contain"
+                          className="w-[32.59px] h-[44px] mb-2 rounded-xl object-contain"
                         />
                       ) : (
                         <MediaPlaceholder
-                          className="w-[64px] h-[64px] mb-2 rounded-xl"
+                          className="w-[32.59px] h-[44px] mb-2 rounded-xl"
                           text="Logo"
                           textClassName="text-[8px] font-semibold text-white/80"
                         />
