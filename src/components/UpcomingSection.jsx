@@ -6,6 +6,7 @@ import MediaPlaceholder from "./MediaPlaceholder.jsx";
 import fireIcon from "../assets/fireIcon.png";
 import footballIcon from "../assets/footballIcon.png";
 import cockfightingIcon from "../assets/cockfightingIcon.png";
+import HotMatches from "./HotMatches.jsx";
 
 function UpcomingSection({
   matches,
@@ -186,7 +187,7 @@ function UpcomingSection({
 
   return (
     <>
-      <div className="p-4 bg-lightGray pt-4 pb-2 px-3 rounded-2xl">
+      {/* <div className="p-4 bg-lightGray pt-4 pb-2 px-3 rounded-2xl">
         <div
           className="flex items-center justify-between text-[10px] font-normal text-gray-900 cursor-pointer select-none"
           onClick={() => setIsUpcomingOpen(!isUpcomingOpen)}
@@ -307,20 +308,21 @@ function UpcomingSection({
             ) : null}
           </div>
         </div>
-      </div>
+      </div> */}
       {!showMoreCompetitions && showList && hasMatches && (
-        <div className="rounded-2xl bg-lightGray p-4 mb-4">
+        <div className="rounded-2xl bg-lightGray">
           <div className="space-y-3">
-            {matches.map((match, index) => (
+            <HotMatches matches={matches} />
+            {/* {matches.map((match, index) => (
               <MatchCard key={`${match.home}-${index}`} match={match} />
-            ))}
+            ))} */}
           </div>
         </div>
       )}
 
-      {showMoreCompetitions && (
+      {/* {showMoreCompetitions && ( */}
         <div className="rounded-2xl p-4">
-          <div className="rounded-2xl p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {moreCompetitionsData.map((comp, index) => (
               <MatchAccordionItem
                 key={comp.id}
@@ -332,8 +334,8 @@ function UpcomingSection({
             ))}
           </div>
         </div>
-      )}
-      {!showMoreCompetitions && (
+      {/* )} */}
+      {/* {!showMoreCompetitions && (
         <div className="flex justify-center">
           <Button
             variant="ghost"
@@ -343,7 +345,7 @@ function UpcomingSection({
             SEE MORE COMING &gt;&gt;
           </Button>
         </div>
-      )}
+      )} */}
     </>
   );
 }
