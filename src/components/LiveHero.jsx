@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import MediaPlaceholder from "./MediaPlaceholder.jsx";
+import ErrorReportModal from "./ErrorReportModal.jsx";
 import { ReplayIcon } from "../assets/icons/replay.jsx";
 import { ReportIcon } from "../assets/icons/report.jsx";
 import { ShareIcon } from "../assets/icons/share.jsx";
@@ -13,6 +14,7 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(1102);
   const [isScreenVisible, setIsScreenVisible] = useState(showScreen);
+  const [showReportModal, setShowReportModal] = useState(false);
   const oddsHome = match.oddsHome ?? "1.22";
   const oddsAway = match.oddsAway ?? "4.3";
   const isLive = (match.status ?? "").toLowerCase() === "live";
@@ -119,12 +121,15 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
         <div className="bg-strong-45deg -mt-3 py-4">
           <div className="flex items-center justify-between px-3">
             <div className="bg-nv-45deg p-[1px] rounded-[20px]">
-              <div className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2">
+              <button
+                onClick={() => setShowReportModal(true)}
+                className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2"
+              >
                 <ReportIcon height={16} width={16} color="#B4B7BC" />
                 <span className="text-neutral-70 font-medium text-[11px] leading-3">
                   Error report
                 </span>
-              </div>
+              </button>
             </div>
             <div className="flex items-center gap-2">
               <div className="bg-nv-45deg p-[1px] rounded-[20px]">
@@ -165,6 +170,7 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
           </div>
         </div>
       )}
+      <ErrorReportModal isOpen={showReportModal} onClose={() => setShowReportModal(false)} />
     </div>
   );
 }

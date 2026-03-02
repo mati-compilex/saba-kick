@@ -2,9 +2,15 @@ import React from 'react'
 import Channels from './Channels'
 import History from './History'
 import HLSStream from '../HLSStream'
+import ErrorReportModal from '../ErrorReportModal'
 import { useState, useEffect, useRef } from 'react'
 import ReactCountryFlag from "react-country-flag"
 import arrowDown from '../../assets/downArrow.png'
+import { ReportIcon } from '../../assets/icons/report.jsx'
+import { ShareIcon } from '../../assets/icons/share.jsx'
+import { ThumbUpIcon } from '../../assets/icons/thumbUp.jsx'
+import { ThumbUpFillIcon } from '../../assets/icons/thumbUpFill.jsx'
+import { ThumbDownIcon } from '../../assets/icons/thumbDown.jsx'
 const countries = [
   { code: 'KH', name: 'Cambodia' },
   { code: 'TH', name: 'Thailand' },
@@ -16,6 +22,9 @@ const CockFightSection = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
   const [activeStream, setActiveStream] = useState('https://live3.krikyabd.me/hls/stream.m3u8')
+  const [liked, setLiked] = useState(false)
+  const [likes, setLikes] = useState(1102)
+  const [showReportModal, setShowReportModal] = useState(false)
   const dropdownRef = useRef(null)
 
   useEffect(() => {
@@ -57,10 +66,63 @@ const CockFightSection = () => {
           )}
         </div>
         <div className='border-r border-neutral_variant-20 h-8 align-center mr-2'></div>
-        <Channels isLive={true} />
+        <Channels isLive={true} onStreamChange={setActiveStream} />
       </div>
-      <HLSStream url={activeStream} className="h-[182px] rounded-lg overflow-hidden mb-[19px]" />
+      <div className="relative">
+        <HLSStream url={activeStream} className="h-[182px] rounded-lg overflow-hidden" />
+        <div className="bg-strong-45deg py-4 rounded-b-lg">
+          <div className="flex items-center justify-between px-3">
+            <div className="bg-nv-45deg p-[1px] rounded-[20px]">
+              <button 
+                onClick={() => setShowReportModal(true)}
+                className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2"
+              >
+                <ReportIcon height={16} width={16} color="#B4B7BC" />
+                <span className="text-neutral-70 font-medium text-[11px] leading-3">
+                  Error report
+                </span>
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="bg-nv-45deg p-[1px] rounded-[20px]">
+                <div className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2">
+                  <button
+                    className="flex items-center gap-1 pr-3 border-r-2 border-neutral_variant-20"
+                    onClick={() => {
+                      if (liked) {
+                        setLikes((v) => v - 1)
+                        setLiked(false)
+                      } else {
+                        setLikes((v) => v + 1)
+                        setLiked(true)
+                      }
+                    }}
+                  >
+                    {liked ? (
+                      <ThumbUpFillIcon height={18} width={18} color="#F3F3F4" />
+                    ) : (
+                      <ThumbUpIcon height={18} width={18} color="#F3F3F4" />
+                    )}
+                    <span className="text-neutral-95 font-medium text-[11px] leading-3">
+                      {likes}
+                    </span>
+                  </button>
+                  <button className="flex items-center gap-1">
+                    <ThumbDownIcon height={18} width={18} color="#F3F3F4" />
+                  </button>
+                </div>
+              </div>
+              <div className="bg-nv-45deg p-[1px] rounded-[20px]">
+                <div className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2">
+                  <ShareIcon height={18} width={18} color="#B4B7BC" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <History selectedCountry={selectedCountry} />
+      <ErrorReportModal isOpen={showReportModal} onClose={() => setShowReportModal(false)} />
     </div>
   )
 }
