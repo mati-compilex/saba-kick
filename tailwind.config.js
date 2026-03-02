@@ -172,6 +172,7 @@ export default {
         'fancy90deg': 'linear-gradient(178.22deg, #EDF9FF 1.22%, #5787FF 40.01%, #229FFF 64.26%, #3561FC 83.66%)',
         'strong-45deg': 'linear-gradient(108.69deg, #3E4763 0.46%, #181E31 50.27%, #050E1F 90.12%)',
         'nv-45deg': 'linear-gradient(108.69deg, rgba(126, 132, 151, 0.82) 0.46%, rgba(83, 91, 117, 0) 50.27%, rgba(80, 86, 98, 0.42) 100.08%)',
+        'outline-nv-45deg': 'linear-gradient(108.69deg, rgba(126, 132, 151, 0.82) 0.46%, rgba(83, 91, 117, 0) 50.27%, rgba(80, 86, 98, 0.42) 100.08%)',
         'white-45deg': 'linear-gradient(108.69deg, rgba(237, 249, 255, 0.82) 0.46%, rgba(237, 249, 255, 0) 100.08%)',
       },
     },

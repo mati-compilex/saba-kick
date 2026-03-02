@@ -116,13 +116,15 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           activeTab={activeTab}
           onChange={onTabChange}
         />
-        {/* <FilterChips
+       
+      </div>
+      {!cockfighting && <LiveHero match={homeLiveMatch} />}
+       <FilterChips
           filters={dateFilters}
           activeFilter={activeDate}
           onChange={onDateChange}
-        /> */}
-      </div>
-      {!cockfighting && <LiveHero match={homeLiveMatch} />}
+          // showLive={true}
+        />
       {isHot && <HotMatches matches={hotMatches} />}
       {football && (
         <>
