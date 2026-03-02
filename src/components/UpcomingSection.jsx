@@ -1,59 +1,22 @@
 import { useState } from "react";
-import Button from "./ui/Button.jsx";
-import MatchCard from "./MatchCard.jsx";
-import MatchAccordionItem from "./MatchAccordionItem.jsx";
-import MediaPlaceholder from "./MediaPlaceholder.jsx";
+import cockfightingIcon from "../assets/cockfightingIcon.png";
 import fireIcon from "../assets/fireIcon.png";
 import footballIcon from "../assets/footballIcon.png";
-import cockfightingIcon from "../assets/cockfightingIcon.png";
+import { dateFilters } from "../data/homeData.js";
+import FilterChips from "./FilterChips.jsx";
 import HotMatches from "./HotMatches.jsx";
+import MatchAccordionItem from "./MatchAccordionItem.jsx";
 
 function UpcomingSection({
   matches,
   mode = "placeholder",
   activeTab = "football",
+  onDateChange,
+  activeDate,
 }) {
-  const [expandedLiveIds, setExpandedLiveIds] = useState([]);
-  const [showMoreCompetitions, setShowMoreCompetitions] = useState(false);
 
-  const tabInfo = {
-    football: { label: "Football", icon: footballIcon },
-    cockfighting: { label: "Cockfighting", icon: cockfightingIcon },
-    hot: { label: "Hot Matches", icon: fireIcon },
-  };
-
-  const currentTab = tabInfo[activeTab] || tabInfo.football;
-
-  const liveMatchesData = [
-    {
-      id: "live-1",
-      league: "Europa League",
-      home: "Manchester United",
-      away: "Barcelona",
-      score: "3 : 2",
-      time: "13:00 ~ 20:00",
-    },
-    {
-      id: "live-2",
-      league: "Champions League",
-      home: "Real Madrid",
-      away: "Liverpool",
-      score: "1 : 1",
-      time: "14:00 ~ 21:00",
-    },
-    {
-      id: "live-3",
-      league: "Premier League",
-      home: "Arsenal",
-      away: "Chelsea",
-      score: "2 : 0",
-      time: "12:00 ~ 19:00",
-    },
-  ];
   const [expandedMatchIds, setExpandedMatchIds] = useState([]);
-  const [isUpcomingOpen, setIsUpcomingOpen] = useState(true);
   const hasMatches = matches.length > 0;
-  const showPlaceholder = mode === "placeholder";
   const showList = mode === "list";
 
   const handleMatchClick = (match) => {
@@ -66,13 +29,6 @@ function UpcomingSection({
     }
   };
 
-  const handleLiveMatchClick = (matchId) => {
-    setExpandedLiveIds((prev) =>
-      prev.includes(matchId)
-        ? prev.filter((id) => id !== matchId)
-        : [...prev, matchId],
-    );
-  };
 
   const moreCompetitionsData = [
     {
@@ -309,7 +265,7 @@ function UpcomingSection({
           </div>
         </div>
       </div> */}
-      {!showMoreCompetitions && showList && hasMatches && (
+      {showList && hasMatches && (
         <div className="rounded-2xl bg-lightGray">
           <div className="space-y-3">
             <HotMatches matches={matches} />
@@ -320,7 +276,13 @@ function UpcomingSection({
         </div>
       )}
 
-      {/* {showMoreCompetitions && ( */}
+       <FilterChips
+          filters={dateFilters}
+          activeFilter={activeDate}
+          onChange={onDateChange}
+          // showLive={true}
+        />
+
         <div className="rounded-2xl p-4">
           <div className="rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {moreCompetitionsData.map((comp, index) => (
@@ -334,18 +296,6 @@ function UpcomingSection({
             ))}
           </div>
         </div>
-      {/* )} */}
-      {/* {!showMoreCompetitions && (
-        <div className="flex justify-center">
-          <Button
-            variant="ghost"
-            className="h-[46px] p-0.5 px-12 !rounded-[10px] border border-dimGray bg-white text-dark font-montserrat text-[14px] !font-normal"
-            onClick={() => setShowMoreCompetitions(true)}
-          >
-            SEE MORE COMING &gt;&gt;
-          </Button>
-        </div>
-      )} */}
     </>
   );
 }
