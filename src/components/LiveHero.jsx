@@ -2,19 +2,23 @@ import { useRef, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import MediaPlaceholder from "./MediaPlaceholder.jsx";
 import ErrorReportModal from "./ErrorReportModal.jsx";
+import ShareModal from "./ShareModal.jsx";
 import { ReplayIcon } from "../assets/icons/replay.jsx";
 import { ReportIcon } from "../assets/icons/report.jsx";
 import { ShareIcon } from "../assets/icons/share.jsx";
 import { ThumbUpIcon } from "../assets/icons/thumbUp.jsx";
 import { ThumbUpFillIcon } from "../assets/icons/thumbUpFill.jsx";
 import { ThumbDownIcon } from "../assets/icons/thumbDown.jsx";
+import { ThumbDownFillIcon } from "../assets/icons/thumbDownFill.jsx";
 
 function LiveHero({ match, showScreen = true, videoUrl = "" }) {
   const videoRef = useRef(null);
   const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
   const [likes, setLikes] = useState(1102);
   const [isScreenVisible, setIsScreenVisible] = useState(showScreen);
   const [showReportModal, setShowReportModal] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   const oddsHome = match.oddsHome ?? "1.22";
   const oddsAway = match.oddsAway ?? "4.3";
   const isLive = (match.status ?? "").toLowerCase() === "live";
@@ -140,9 +144,11 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
                       if (liked) {
                         setLikes((v) => v - 1);
                         setLiked(false);
+                        return;
                       } else {
                         setLikes((v) => v + 1);
                         setLiked(true);
+                        if (disliked) setDisliked(false);
                       }
                     }}
                   >
@@ -156,21 +162,48 @@ function LiveHero({ match, showScreen = true, videoUrl = "" }) {
                     </span>
                   </button>
 
-                  <button className="flex items-center gap-1">
-                    <ThumbDownIcon height={18} width={18} color="#F3F3F4" />
+                  <button
+                    className="flex items-center gap-1"
+                    onClick={() => {
+                      if (disliked) {
+                        setDisliked(false);
+                      } else {
+                        setDisliked(true);
+                        if (liked) {
+                          setLiked(false);
+                          setLikes((v) => Math.max(0, v - 1));
+                        }
+                      }
+                    }}
+                  >
+                    {disliked ? (
+                      <ThumbDownFillIcon height={18} width={18} color="#F3F3F4" />
+                    ) : (
+                      <ThumbDownIcon height={18} width={18} color="#F3F3F4" />
+                    )}
                   </button>
                 </div>
               </div>
               <div className="bg-nv-45deg p-[1px] rounded-[20px]">
-                <div className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2">
+                <button
+                  className="bg-emphasis rounded-[inherit] flex gap-2 items-center p-2"
+                  onClick={() => {
+                    setShowShareModal(true);
+                  }}
+                >
                   <ShareIcon height={18} width={18} color="#B4B7BC" />
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
       <ErrorReportModal isOpen={showReportModal} onClose={() => setShowReportModal(false)} />
+      <ShareModal
+        isOpen={showShareModal}
+        onClose={() => setShowShareModal(false)}
+        url={videoSrc || (typeof window !== "undefined" ? window.location.href : "")}
+      />
     </div>
   );
 }
