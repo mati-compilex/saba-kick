@@ -13,6 +13,7 @@ function UpcomingSection({
   activeTab = "football",
   onDateChange,
   activeDate,
+  setSelectedMatch
 }) {
   const [expandedMatchIds, setExpandedMatchIds] = useState([]);
   const hasMatches = matches.length > 0;
@@ -266,7 +267,7 @@ function UpcomingSection({
       {showList && hasMatches && (
         <div className="rounded-2xl bg-lightGray">
           <div className="space-y-3">
-            <HotMatches matches={matches} />
+            <HotMatches matches={matches} setSelectedMatch={setSelectedMatch} />
             {/* {matches.map((match, index) => (
               <MatchCard key={`${match.home}-${index}`} match={match} />
             ))} */}

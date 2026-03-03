@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import FilterChips from "../components/FilterChips.jsx";
 import LeagueList from "../components/LeagueList.jsx";
 import LiveHero from "../components/LiveHero.jsx";
@@ -36,6 +36,8 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     });
   }, [activeTab, activeDate]);
 
+const [selectedMatch, setSelectedMatch] = useState(null);
+
   const homeLiveMatch = useMemo(() => ({
     id: "live-hero-brisbane-auckland",
     league: "Premier League",
@@ -50,9 +52,13 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
     awayLogo: brentfordLogo,
     countryCode: "GB-ENG",
     time: "63:12",
-    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    videoUrl: "https://youtu.be/LxnilbLr2nQ?si=SJ8rEXnU2Oizf3WZ",
     // poster: brentfordLogo,
   }), []);
+
+useEffect(() => {
+  setSelectedMatch(homeLiveMatch);
+}, [homeLiveMatch]);
 
   const hotMatches = useMemo(() => {
     return [
@@ -67,6 +73,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
         homeLogo: brisbaneRoarLogo,
         awayLogo: aucklandLogo,
         countryCode: "AU",
+        videoUrl: "https://youtu.be/LxnilbLr2nQ?si=SJ8rEXnU2Oizf3WZ",
       },
       {
         id: "borneo-bali-live",
@@ -79,6 +86,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
         homeLogo: borneoLogo,
         awayLogo: baliLogo,
         countryCode: "ID",
+        videoUrl: "https://youtu.be/3GieLavaQfY?si=xmIpPsDmblvWIjhU",
       },
       {
         id: "brvt-bacninh-upcoming",
@@ -91,6 +99,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
         homeLogo: brvtLogo,
         awayLogo: bacNinhLogo,
         countryCode: "VN",
+        videoUrl: "https://youtu.be/Iw1xeMPru4k?si=AH3Jw7OMQdKhb6Xs",
       },
     ];
   }, []);
@@ -116,7 +125,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
         />
 
       </div>
-      {!cockfighting && <LiveHero match={homeLiveMatch} />}
+      {!cockfighting && <LiveHero match={selectedMatch} videoUrl={selectedMatch?.videoUrl} />}
       {isHot &&
         <UpcomingSection
           matches={hotMatches}
@@ -124,6 +133,7 @@ function HomePage({ activeTab, activeDate, onTabChange, onDateChange }) {
           activeDate={activeDate}
           onDateChange={onDateChange}
           mode="list"
+          setSelectedMatch={setSelectedMatch}
         />
         // <HotMatches matches={hotMatches} />
       }
