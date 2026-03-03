@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 
 function Layout({ children, aside }) {
   return (
-    <div className="min-h-screen bg-black" style={{backgroundImage:"url('src/assets/layout-bg.png')"}}>
+    <div className="min-h-screen bg-black" style={{backgroundImage:"url('src/assets/layout-bg.png')", backgroundSize:"100%", backgroundAttachment:"fixed"}}>
       <div className="mx-auto w-full max-w-[1200px] py-2">
         <div className="grid gap-6 lg:grid-cols-1">
           <main className="space-y-[10px]">
