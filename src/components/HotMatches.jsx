@@ -2,15 +2,16 @@ import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import MediaPlaceholder from "./MediaPlaceholder.jsx";
 
-function HotMatches({ matches = [] }) {
+function HotMatches({ matches = [], setSelectedMatch }) {
   const [expandedIds, setExpandedIds] = useState([]);
-
   const toggle = (id) => {
+   setSelectedMatch(
+      matches.find((match) => (match.id ?? `${match.home}-${match.away}`) === id)
+   );
     setExpandedIds((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
   };
-
   return (
     <div className="p-4  pt-4 pb-2 px-3">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
