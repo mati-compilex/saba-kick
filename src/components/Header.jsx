@@ -26,7 +26,7 @@ function Header() {
           <img src={logo} alt="Logo" className=" w-[54px]" />
         </Link>
       </div>
-      <div className="relative flex items-center gap-5 px-[15px]" ref={dropdownRef}>
+      {/* <div className="relative flex items-center gap-5 px-[15px]" ref={dropdownRef}>
         <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
           <MenuFill />
         </div>
@@ -40,7 +40,7 @@ function Header() {
             </button>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }
